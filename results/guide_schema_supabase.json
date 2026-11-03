@@ -1,0 +1,1638 @@
+{
+  "dataset": "fiqa",
+  "sections": 57600,
+  "sections_per_document": 8,
+  "questions": 648,
+  "k": 10,
+  "seed": 42,
+  "max_distance": 0.5,
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "route_max_rows": 6000,
+  "rows": [
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide query, no LIMIT",
+      "setting": "default",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 7.666666666666667,
+      "zero_results": 0.038580246913580245,
+      "short_results": 0.39197530864197533,
+      "recall_at_10": 0.9614197530864198,
+      "p50_ms": 30.825,
+      "p95_ms": 31.3789,
+      "plans": {
+        "seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0,
+      "mean_rows_before_top_10": 25.867283950617285
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide query, no LIMIT",
+      "setting": "default",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 3.861111111111111,
+      "zero_results": 0.21296296296296297,
+      "short_results": 0.8348765432098766,
+      "recall_at_10": 0.7870370370370371,
+      "p50_ms": 21.785,
+      "p95_ms": 22.178649999999998,
+      "plans": {
+        "seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0,
+      "mean_rows_before_top_10": 5.216049382716049
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide query, no LIMIT",
+      "setting": "default",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 2.3271604938271606,
+      "zero_results": 0.3626543209876543,
+      "short_results": 0.9490740740740741,
+      "recall_at_10": 0.6373456790123457,
+      "p50_ms": 19.8285,
+      "p95_ms": 20.0809,
+      "plans": {
+        "seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0,
+      "mean_rows_before_top_10": 2.5709876543209877
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide query, no LIMIT",
+      "setting": "default",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 0.47530864197530864,
+      "zero_results": 0.6959876543209876,
+      "short_results": 1.0,
+      "recall_at_10": 0.30401234567901236,
+      "p50_ms": 18.472,
+      "p95_ms": 18.73565,
+      "plans": {
+        "seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0,
+      "mean_rows_before_top_10": 0.47530864197530864
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide query, no LIMIT",
+      "setting": "default",
+      "user": "u_0_1pct",
+      "owned": 56,
+      "mean_returned": 0.06172839506172839,
+      "zero_results": 0.9429012345679012,
+      "short_results": 1.0,
+      "recall_at_10": 0.05709876543209876,
+      "p50_ms": 18.1265,
+      "p95_ms": 18.5136,
+      "plans": {
+        "seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0,
+      "mean_rows_before_top_10": 0.06172839506172839
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide policy only",
+      "setting": "default",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.962037037037037,
+      "p50_ms": 14.429,
+      "p95_ms": 119.26549999999996,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide policy only",
+      "setting": "default",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 3.9660493827160495,
+      "zero_results": 0.015432098765432098,
+      "short_results": 0.9938271604938271,
+      "recall_at_10": 0.39598765432098765,
+      "p50_ms": 10.9145,
+      "p95_ms": 31.91039999999999,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide policy only",
+      "setting": "default",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 1.9753086419753085,
+      "zero_results": 0.12962962962962962,
+      "short_results": 1.0,
+      "recall_at_10": 0.19753086419753088,
+      "p50_ms": 5.757,
+      "p95_ms": 12.729799999999996,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide policy only",
+      "setting": "default",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 0.3888888888888889,
+      "zero_results": 0.6589506172839507,
+      "short_results": 1.0,
+      "recall_at_10": 0.03888888888888889,
+      "p50_ms": 3.752,
+      "p95_ms": 8.1595,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide policy only",
+      "setting": "default",
+      "user": "u_0_1pct",
+      "owned": 56,
+      "mean_returned": 0.046296296296296294,
+      "zero_results": 0.9567901234567902,
+      "short_results": 1.0,
+      "recall_at_10": 0.00462962962962963,
+      "p50_ms": 6.7835,
+      "p95_ms": 22.5351,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide policy only",
+      "setting": "iterative",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.962037037037037,
+      "p50_ms": 8.368500000000001,
+      "p95_ms": 44.51234999999997,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide policy only",
+      "setting": "iterative",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9712962962962963,
+      "p50_ms": 14.164000000000001,
+      "p95_ms": 44.9705,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.19907407407407407
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide policy only",
+      "setting": "iterative",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9787037037037037,
+      "p50_ms": 7.8185,
+      "p95_ms": 39.20394999999999,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.18209876543209877
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide policy only",
+      "setting": "iterative",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9831790123456791,
+      "p50_ms": 26.231,
+      "p95_ms": 235.68345,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.18055555555555555
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide policy only",
+      "setting": "iterative",
+      "user": "u_0_1pct",
+      "owned": 56,
+      "mean_returned": 8.944444444444445,
+      "zero_results": 0.0,
+      "short_results": 0.4089506172839506,
+      "recall_at_10": 0.6799382716049382,
+      "p50_ms": 29.279,
+      "p95_ms": 37.79299999999999,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.009259259259259259
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide policy only",
+      "setting": "iterative + memory",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.962037037037037,
+      "p50_ms": 7.8445,
+      "p95_ms": 39.24964999999999,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide policy only",
+      "setting": "iterative + memory",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9712962962962963,
+      "p50_ms": 8.379999999999999,
+      "p95_ms": 27.424099999999985,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.19907407407407407
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide policy only",
+      "setting": "iterative + memory",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9787037037037037,
+      "p50_ms": 19.8435,
+      "p95_ms": 93.61459999999995,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.18209876543209877
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide policy only",
+      "setting": "iterative + memory",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9861111111111112,
+      "p50_ms": 15.7285,
+      "p95_ms": 104.29784999999994,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.18981481481481483
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "guide policy only",
+      "setting": "iterative + memory",
+      "user": "u_0_1pct",
+      "owned": 56,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9986111111111111,
+      "p50_ms": 104.6325,
+      "p95_ms": 1100.7770499999992,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.06327160493827161
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter + indexes",
+      "setting": "default",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.962037037037037,
+      "p50_ms": 12.281500000000001,
+      "p95_ms": 137.8691999999999,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter + indexes",
+      "setting": "default",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 3.9660493827160495,
+      "zero_results": 0.015432098765432098,
+      "short_results": 0.9938271604938271,
+      "recall_at_10": 0.39598765432098765,
+      "p50_ms": 5.6114999999999995,
+      "p95_ms": 14.136299999999991,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter + indexes",
+      "setting": "default",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 1.9753086419753085,
+      "zero_results": 0.12962962962962962,
+      "short_results": 1.0,
+      "recall_at_10": 0.19753086419753088,
+      "p50_ms": 6.012499999999999,
+      "p95_ms": 28.344899999999992,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter + indexes",
+      "setting": "default",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 1.429,
+      "p95_ms": 1.5235999999999998,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter + indexes",
+      "setting": "default",
+      "user": "u_0_1pct",
+      "owned": 56,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.6125,
+      "p95_ms": 0.6406499999999999,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter + indexes",
+      "setting": "iterative",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.962037037037037,
+      "p50_ms": 6.5645,
+      "p95_ms": 28.319449999999993,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter + indexes",
+      "setting": "iterative",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9712962962962963,
+      "p50_ms": 9.6855,
+      "p95_ms": 30.776399999999995,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.19907407407407407
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter + indexes",
+      "setting": "iterative",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9787037037037037,
+      "p50_ms": 21.372999999999998,
+      "p95_ms": 129.06995,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.18209876543209877
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter + indexes",
+      "setting": "iterative",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 1.449,
+      "p95_ms": 1.5066499999999998,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter + indexes",
+      "setting": "iterative",
+      "user": "u_0_1pct",
+      "owned": 56,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.667,
+      "p95_ms": 0.7086499999999999,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter + indexes, re-sorted",
+      "setting": "iterative",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.962037037037037,
+      "p50_ms": 7.8175,
+      "p95_ms": 16.98895,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter + indexes, re-sorted",
+      "setting": "iterative",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9712962962962963,
+      "p50_ms": 7.0635,
+      "p95_ms": 21.6894,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter + indexes, re-sorted",
+      "setting": "iterative",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9787037037037037,
+      "p50_ms": 10.9635,
+      "p95_ms": 105.00869999999985,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter + indexes, re-sorted",
+      "setting": "iterative",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 1.486,
+      "p95_ms": 1.5292999999999999,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter + indexes, re-sorted",
+      "setting": "iterative",
+      "user": "u_0_1pct",
+      "owned": 56,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.728,
+      "p95_ms": 0.7636499999999999,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter, routed by rows owned",
+      "setting": "routed",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.962037037037037,
+      "p50_ms": 7.989,
+      "p95_ms": 25.673299999999998,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter, routed by rows owned",
+      "setting": "routed",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 15.25,
+      "p95_ms": 15.624,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter, routed by rows owned",
+      "setting": "routed",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 7.386,
+      "p95_ms": 7.55525,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter, routed by rows owned",
+      "setting": "routed",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 1.736,
+      "p95_ms": 1.775,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "document_id filter, routed by rows owned",
+      "setting": "routed",
+      "user": "u_0_1pct",
+      "owned": 56,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.6165,
+      "p95_ms": 0.646,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "owner copied onto sections + index",
+      "setting": "iterative",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.962037037037037,
+      "p50_ms": 11.56,
+      "p95_ms": 94.36149999999998,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "owner copied onto sections + index",
+      "setting": "iterative",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9712962962962963,
+      "p50_ms": 10.9755,
+      "p95_ms": 36.55745,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.19907407407407407
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "owner copied onto sections + index",
+      "setting": "iterative",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9787037037037037,
+      "p50_ms": 8.189499999999999,
+      "p95_ms": 20.356099999999994,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.18209876543209877
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "owner copied onto sections + index",
+      "setting": "iterative",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9831790123456791,
+      "p50_ms": 24.5165,
+      "p95_ms": 253.41279999999995,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.18055555555555555
+    },
+    {
+      "backend": "supabase",
+      "variant": "single owner",
+      "config": "owner copied onto sections + index",
+      "setting": "iterative",
+      "user": "u_0_1pct",
+      "owned": 56,
+      "mean_returned": 8.944444444444445,
+      "zero_results": 0.0,
+      "short_results": 0.4089506172839506,
+      "recall_at_10": 0.6799382716049382,
+      "p50_ms": 31.7825,
+      "p95_ms": 523.4933499999999,
+      "plans": {
+        "hnsw+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.009259259259259259
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide query, no LIMIT",
+      "setting": "default",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 7.666666666666667,
+      "zero_results": 0.038580246913580245,
+      "short_results": 0.39197530864197533,
+      "recall_at_10": 0.9614197530864198,
+      "p50_ms": 30.7895,
+      "p95_ms": 31.12355,
+      "plans": {
+        "owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0,
+      "mean_rows_before_top_10": 25.867283950617285
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide query, no LIMIT",
+      "setting": "default",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 3.861111111111111,
+      "zero_results": 0.21296296296296297,
+      "short_results": 0.8348765432098766,
+      "recall_at_10": 0.7870370370370371,
+      "p50_ms": 21.303,
+      "p95_ms": 21.5716,
+      "plans": {
+        "owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0,
+      "mean_rows_before_top_10": 5.216049382716049
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide query, no LIMIT",
+      "setting": "default",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 2.3271604938271606,
+      "zero_results": 0.3626543209876543,
+      "short_results": 0.9490740740740741,
+      "recall_at_10": 0.6373456790123457,
+      "p50_ms": 19.502499999999998,
+      "p95_ms": 19.758950000000002,
+      "plans": {
+        "owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0,
+      "mean_rows_before_top_10": 2.5709876543209877
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide query, no LIMIT",
+      "setting": "default",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 0.47530864197530864,
+      "zero_results": 0.6959876543209876,
+      "short_results": 1.0,
+      "recall_at_10": 0.30401234567901236,
+      "p50_ms": 19.097,
+      "p95_ms": 19.3656,
+      "plans": {
+        "owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0,
+      "mean_rows_before_top_10": 0.47530864197530864
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide query, no LIMIT",
+      "setting": "default",
+      "user": "u_0_1pct",
+      "owned": 56,
+      "mean_returned": 0.06172839506172839,
+      "zero_results": 0.9429012345679012,
+      "short_results": 1.0,
+      "recall_at_10": 0.05709876543209876,
+      "p50_ms": 17.777,
+      "p95_ms": 17.948900000000002,
+      "plans": {
+        "owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0,
+      "mean_rows_before_top_10": 0.06172839506172839
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide policy only",
+      "setting": "default",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.962037037037037,
+      "p50_ms": 9.0465,
+      "p95_ms": 199.1676,
+      "plans": {
+        "hnsw+owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide policy only",
+      "setting": "default",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 3.9660493827160495,
+      "zero_results": 0.015432098765432098,
+      "short_results": 0.9938271604938271,
+      "recall_at_10": 0.39598765432098765,
+      "p50_ms": 8.622499999999999,
+      "p95_ms": 17.995199999999997,
+      "plans": {
+        "hnsw+owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide policy only",
+      "setting": "default",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 1.9753086419753085,
+      "zero_results": 0.12962962962962962,
+      "short_results": 1.0,
+      "recall_at_10": 0.19753086419753088,
+      "p50_ms": 7.6850000000000005,
+      "p95_ms": 39.256,
+      "plans": {
+        "hnsw+owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide policy only",
+      "setting": "default",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 0.3888888888888889,
+      "zero_results": 0.6589506172839507,
+      "short_results": 1.0,
+      "recall_at_10": 0.03888888888888889,
+      "p50_ms": 5.6345,
+      "p95_ms": 22.371449999999996,
+      "plans": {
+        "hnsw+owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide policy only",
+      "setting": "default",
+      "user": "u_0_1pct",
+      "owned": 56,
+      "mean_returned": 0.046296296296296294,
+      "zero_results": 0.9567901234567902,
+      "short_results": 1.0,
+      "recall_at_10": 0.00462962962962963,
+      "p50_ms": 1.8955,
+      "p95_ms": 8.62745,
+      "plans": {
+        "hnsw+owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide policy only",
+      "setting": "iterative",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.962037037037037,
+      "p50_ms": 3.3064999999999998,
+      "p95_ms": 8.189849999999998,
+      "plans": {
+        "hnsw+owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide policy only",
+      "setting": "iterative",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9712962962962963,
+      "p50_ms": 7.861000000000001,
+      "p95_ms": 20.117799999999995,
+      "plans": {
+        "hnsw+owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.19907407407407407
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide policy only",
+      "setting": "iterative",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9787037037037037,
+      "p50_ms": 10.042,
+      "p95_ms": 55.28935,
+      "plans": {
+        "hnsw+owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.18209876543209877
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide policy only",
+      "setting": "iterative",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9831790123456791,
+      "p50_ms": 15.120000000000001,
+      "p95_ms": 102.41215,
+      "plans": {
+        "hnsw+owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.18055555555555555
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide policy only",
+      "setting": "iterative",
+      "user": "u_0_1pct",
+      "owned": 56,
+      "mean_returned": 8.944444444444445,
+      "zero_results": 0.0,
+      "short_results": 0.4089506172839506,
+      "recall_at_10": 0.6799382716049382,
+      "p50_ms": 31.163,
+      "p95_ms": 36.42359999999999,
+      "plans": {
+        "hnsw+owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.009259259259259259
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide policy only",
+      "setting": "iterative + memory",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.962037037037037,
+      "p50_ms": 12.567499999999999,
+      "p95_ms": 54.68185,
+      "plans": {
+        "hnsw+owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide policy only",
+      "setting": "iterative + memory",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9712962962962963,
+      "p50_ms": 11.1355,
+      "p95_ms": 40.7787,
+      "plans": {
+        "hnsw+owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.19907407407407407
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide policy only",
+      "setting": "iterative + memory",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9787037037037037,
+      "p50_ms": 6.589,
+      "p95_ms": 15.280899999999999,
+      "plans": {
+        "hnsw+owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.18209876543209877
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide policy only",
+      "setting": "iterative + memory",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9861111111111112,
+      "p50_ms": 21.775,
+      "p95_ms": 141.02394999999981,
+      "plans": {
+        "hnsw+owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.18981481481481483
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "guide policy only",
+      "setting": "iterative + memory",
+      "user": "u_0_1pct",
+      "owned": 56,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9986111111111111,
+      "p50_ms": 102.9785,
+      "p95_ms": 790.722649999999,
+      "plans": {
+        "hnsw+owner+seq": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.06327160493827161
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter + indexes",
+      "setting": "default",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.962037037037037,
+      "p50_ms": 12.8005,
+      "p95_ms": 160.88549999999995,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter + indexes",
+      "setting": "default",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 3.9660493827160495,
+      "zero_results": 0.015432098765432098,
+      "short_results": 0.9938271604938271,
+      "recall_at_10": 0.39598765432098765,
+      "p50_ms": 4.827500000000001,
+      "p95_ms": 10.355349999999998,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter + indexes",
+      "setting": "default",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 1.9753086419753085,
+      "zero_results": 0.12962962962962962,
+      "short_results": 1.0,
+      "recall_at_10": 0.19753086419753088,
+      "p50_ms": 1.6,
+      "p95_ms": 2.266,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter + indexes",
+      "setting": "default",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 1.429,
+      "p95_ms": 1.48965,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter + indexes",
+      "setting": "default",
+      "user": "u_0_1pct",
+      "owned": 56,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.556,
+      "p95_ms": 0.579,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter + indexes",
+      "setting": "iterative",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.962037037037037,
+      "p50_ms": 5.745,
+      "p95_ms": 55.015449999999944,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter + indexes",
+      "setting": "iterative",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9712962962962963,
+      "p50_ms": 12.811,
+      "p95_ms": 58.735399999999984,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.19907407407407407
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter + indexes",
+      "setting": "iterative",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9787037037037037,
+      "p50_ms": 7.313,
+      "p95_ms": 26.05765,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.18209876543209877
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter + indexes",
+      "setting": "iterative",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 1.343,
+      "p95_ms": 1.38665,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter + indexes",
+      "setting": "iterative",
+      "user": "u_0_1pct",
+      "owned": 56,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.56,
+      "p95_ms": 0.589,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter + indexes, re-sorted",
+      "setting": "iterative",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.962037037037037,
+      "p50_ms": 7.989000000000001,
+      "p95_ms": 43.612199999999966,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter + indexes, re-sorted",
+      "setting": "iterative",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9712962962962963,
+      "p50_ms": 10.0235,
+      "p95_ms": 37.67864999999999,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter + indexes, re-sorted",
+      "setting": "iterative",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9787037037037037,
+      "p50_ms": 8.3265,
+      "p95_ms": 32.47119999999999,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter + indexes, re-sorted",
+      "setting": "iterative",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 1.463,
+      "p95_ms": 1.507,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter + indexes, re-sorted",
+      "setting": "iterative",
+      "user": "u_0_1pct",
+      "owned": 56,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.596,
+      "p95_ms": 0.618,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter, routed by rows owned",
+      "setting": "routed",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.962037037037037,
+      "p50_ms": 10.9025,
+      "p95_ms": 40.64354999999999,
+      "plans": {
+        "hnsw+owner": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter, routed by rows owned",
+      "setting": "routed",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 14.313,
+      "p95_ms": 14.5086,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter, routed by rows owned",
+      "setting": "routed",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 7.282,
+      "p95_ms": 7.44165,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter, routed by rows owned",
+      "setting": "routed",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 1.712,
+      "p95_ms": 1.7649499999999998,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    },
+    {
+      "backend": "supabase",
+      "variant": "multiple owners",
+      "config": "document_id filter, routed by rows owned",
+      "setting": "routed",
+      "user": "u_0_1pct",
+      "owned": 56,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.6365000000000001,
+      "p95_ms": 0.78665,
+      "plans": {
+        "owner+docid": 648
+      },
+      "leaked_rows": 0,
+      "out_of_order": 0.0
+    }
+  ]
+}

@@ -1,0 +1,1371 @@
+{
+  "dataset": "fiqa",
+  "documents": 57600,
+  "questions": 648,
+  "k": 10,
+  "seed": 42,
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "route_max_rows": 6000,
+  "rows": [
+    {
+      "backend": "local",
+      "config": "wrapped RLS",
+      "setting": "default",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 9.99537037037037,
+      "zero_results": 0.0,
+      "short_results": 0.0015432098765432098,
+      "recall_at_10": 0.9631172839506172,
+      "p50_ms": 1.9385,
+      "p95_ms": 7.549949999999993,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS",
+      "setting": "default",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 3.941358024691358,
+      "zero_results": 0.012345679012345678,
+      "short_results": 0.9969135802469136,
+      "recall_at_10": 0.3941358024691358,
+      "p50_ms": 2.452,
+      "p95_ms": 9.951699999999992,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS",
+      "setting": "default",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 1.9969135802469136,
+      "zero_results": 0.11574074074074074,
+      "short_results": 1.0,
+      "recall_at_10": 0.19969135802469137,
+      "p50_ms": 1.9375,
+      "p95_ms": 5.622349999999997,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS",
+      "setting": "default",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 0.44598765432098764,
+      "zero_results": 0.6373456790123457,
+      "short_results": 1.0,
+      "recall_at_10": 0.044598765432098765,
+      "p50_ms": 2.2560000000000002,
+      "p95_ms": 5.4904,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS",
+      "setting": "default",
+      "user": "u_0_1pct",
+      "owned": 57,
+      "mean_returned": 0.035493827160493825,
+      "zero_results": 0.9645061728395061,
+      "short_results": 1.0,
+      "recall_at_10": 0.0035493827160493828,
+      "p50_ms": 1.9675,
+      "p95_ms": 4.1239,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS",
+      "setting": "iterative",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9635802469135802,
+      "p50_ms": 1.4264999999999999,
+      "p95_ms": 3.0156999999999994,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS",
+      "setting": "iterative",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9689814814814814,
+      "p50_ms": 4.335,
+      "p95_ms": 7.8964,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS",
+      "setting": "iterative",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9726851851851852,
+      "p50_ms": 9.544,
+      "p95_ms": 17.31925,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS",
+      "setting": "iterative",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9891975308641975,
+      "p50_ms": 36.784,
+      "p95_ms": 67.11415,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS",
+      "setting": "iterative",
+      "user": "u_0_1pct",
+      "owned": 57,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.8743827160493828,
+      "p50_ms": 333.9435,
+      "p95_ms": 420.6383,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS",
+      "setting": "iterative + memory",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9635802469135802,
+      "p50_ms": 1.5975000000000001,
+      "p95_ms": 4.0619999999999985,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS",
+      "setting": "iterative + memory",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9689814814814814,
+      "p50_ms": 4.4165,
+      "p95_ms": 8.009549999999999,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS",
+      "setting": "iterative + memory",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9726851851851852,
+      "p50_ms": 8.563,
+      "p95_ms": 17.42085,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS",
+      "setting": "iterative + memory",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9891975308641975,
+      "p50_ms": 36.299,
+      "p95_ms": 66.69985,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS",
+      "setting": "iterative + memory",
+      "user": "u_0_1pct",
+      "owned": 57,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9978395061728395,
+      "p50_ms": 458.023,
+      "p95_ms": 716.4413,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + query filter",
+      "setting": "default",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 9.99537037037037,
+      "zero_results": 0.0,
+      "short_results": 0.0015432098765432098,
+      "recall_at_10": 0.9631172839506172,
+      "p50_ms": 1.7745,
+      "p95_ms": 3.5230999999999995,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + query filter",
+      "setting": "default",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 3.941358024691358,
+      "zero_results": 0.012345679012345678,
+      "short_results": 0.9969135802469136,
+      "recall_at_10": 0.3941358024691358,
+      "p50_ms": 1.987,
+      "p95_ms": 3.7080499999999983,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + query filter",
+      "setting": "default",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 1.9969135802469136,
+      "zero_results": 0.11574074074074074,
+      "short_results": 1.0,
+      "recall_at_10": 0.19969135802469137,
+      "p50_ms": 1.8904999999999998,
+      "p95_ms": 3.1241999999999996,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + query filter",
+      "setting": "default",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 0.44598765432098764,
+      "zero_results": 0.6373456790123457,
+      "short_results": 1.0,
+      "recall_at_10": 0.044598765432098765,
+      "p50_ms": 2.369,
+      "p95_ms": 5.341649999999998,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + query filter",
+      "setting": "default",
+      "user": "u_0_1pct",
+      "owned": 57,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 18.9895,
+      "p95_ms": 108.35244999999999,
+      "plans": {
+        "seq": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + query filter",
+      "setting": "iterative",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9635802469135802,
+      "p50_ms": 2.223,
+      "p95_ms": 8.486799999999997,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + query filter",
+      "setting": "iterative",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9689814814814814,
+      "p50_ms": 4.7605,
+      "p95_ms": 9.2755,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + query filter",
+      "setting": "iterative",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9726851851851852,
+      "p50_ms": 8.125499999999999,
+      "p95_ms": 13.9096,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + query filter",
+      "setting": "iterative",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9891975308641975,
+      "p50_ms": 34.964,
+      "p95_ms": 62.435599999999994,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + query filter",
+      "setting": "iterative",
+      "user": "u_0_1pct",
+      "owned": 57,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 18.4665,
+      "p95_ms": 100.2692,
+      "plans": {
+        "seq": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + query filter",
+      "setting": "iterative + memory",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9635802469135802,
+      "p50_ms": 2.175,
+      "p95_ms": 6.9548499999999995,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + query filter",
+      "setting": "iterative + memory",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9689814814814814,
+      "p50_ms": 4.4045,
+      "p95_ms": 7.319949999999999,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + query filter",
+      "setting": "iterative + memory",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9726851851851852,
+      "p50_ms": 8.257,
+      "p95_ms": 13.7863,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + query filter",
+      "setting": "iterative + memory",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9891975308641975,
+      "p50_ms": 34.6305,
+      "p95_ms": 62.54974999999999,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + query filter",
+      "setting": "iterative + memory",
+      "user": "u_0_1pct",
+      "owned": 57,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 18.0655,
+      "p95_ms": 100.96119999999999,
+      "plans": {
+        "seq": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index",
+      "setting": "default",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 9.99537037037037,
+      "zero_results": 0.0,
+      "short_results": 0.0015432098765432098,
+      "recall_at_10": 0.9631172839506172,
+      "p50_ms": 1.9205,
+      "p95_ms": 6.538949999999999,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index",
+      "setting": "default",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 3.941358024691358,
+      "zero_results": 0.012345679012345678,
+      "short_results": 0.9969135802469136,
+      "recall_at_10": 0.3941358024691358,
+      "p50_ms": 2.4575,
+      "p95_ms": 4.73915,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index",
+      "setting": "default",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 1.9969135802469136,
+      "zero_results": 0.11574074074074074,
+      "short_results": 1.0,
+      "recall_at_10": 0.19969135802469137,
+      "p50_ms": 1.816,
+      "p95_ms": 3.043849999999999,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index",
+      "setting": "default",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 0.44598765432098764,
+      "zero_results": 0.6373456790123457,
+      "short_results": 1.0,
+      "recall_at_10": 0.044598765432098765,
+      "p50_ms": 1.927,
+      "p95_ms": 3.3371999999999997,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index",
+      "setting": "default",
+      "user": "u_0_1pct",
+      "owned": 57,
+      "mean_returned": 0.035493827160493825,
+      "zero_results": 0.9645061728395061,
+      "short_results": 1.0,
+      "recall_at_10": 0.0035493827160493828,
+      "p50_ms": 1.9735,
+      "p95_ms": 3.8777499999999985,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index",
+      "setting": "iterative",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9635802469135802,
+      "p50_ms": 1.534,
+      "p95_ms": 2.9638999999999998,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index",
+      "setting": "iterative",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9689814814814814,
+      "p50_ms": 4.6395,
+      "p95_ms": 8.82805,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index",
+      "setting": "iterative",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9726851851851852,
+      "p50_ms": 8.066500000000001,
+      "p95_ms": 13.852199999999987,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index",
+      "setting": "iterative",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9891975308641975,
+      "p50_ms": 34.965,
+      "p95_ms": 62.30475,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index",
+      "setting": "iterative",
+      "user": "u_0_1pct",
+      "owned": 57,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.8743827160493828,
+      "p50_ms": 314.53700000000003,
+      "p95_ms": 399.7421,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index",
+      "setting": "iterative + memory",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9635802469135802,
+      "p50_ms": 1.4805000000000001,
+      "p95_ms": 3.746899999999998,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index",
+      "setting": "iterative + memory",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9689814814814814,
+      "p50_ms": 4.2485,
+      "p95_ms": 7.3735,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index",
+      "setting": "iterative + memory",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9726851851851852,
+      "p50_ms": 8.0685,
+      "p95_ms": 14.224699999999999,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index",
+      "setting": "iterative + memory",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9891975308641975,
+      "p50_ms": 34.811,
+      "p95_ms": 63.009449999999994,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index",
+      "setting": "iterative + memory",
+      "user": "u_0_1pct",
+      "owned": 57,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9978395061728395,
+      "p50_ms": 433.202,
+      "p95_ms": 619.1687,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "plain RLS + owner index",
+      "setting": "default",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 9.99537037037037,
+      "zero_results": 0.0,
+      "short_results": 0.0015432098765432098,
+      "recall_at_10": 0.9631172839506172,
+      "p50_ms": 1.5219999999999998,
+      "p95_ms": 3.1430999999999987,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "plain RLS + owner index",
+      "setting": "default",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 3.941358024691358,
+      "zero_results": 0.012345679012345678,
+      "short_results": 0.9969135802469136,
+      "recall_at_10": 0.3941358024691358,
+      "p50_ms": 2.056,
+      "p95_ms": 3.25125,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "plain RLS + owner index",
+      "setting": "default",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 1.9969135802469136,
+      "zero_results": 0.11574074074074074,
+      "short_results": 1.0,
+      "recall_at_10": 0.19969135802469137,
+      "p50_ms": 2.066,
+      "p95_ms": 3.2323,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "plain RLS + owner index",
+      "setting": "default",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.905,
+      "p95_ms": 1.5455999999999999,
+      "plans": {
+        "owner": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "plain RLS + owner index",
+      "setting": "default",
+      "user": "u_0_1pct",
+      "owned": 57,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.259,
+      "p95_ms": 0.44144999999999973,
+      "plans": {
+        "owner": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "plain RLS + owner index",
+      "setting": "iterative",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9635802469135802,
+      "p50_ms": 1.6305,
+      "p95_ms": 3.004749999999998,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "plain RLS + owner index",
+      "setting": "iterative",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9689814814814814,
+      "p50_ms": 4.8055,
+      "p95_ms": 8.303799999999997,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "plain RLS + owner index",
+      "setting": "iterative",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9726851851851852,
+      "p50_ms": 9.228,
+      "p95_ms": 15.562549999999998,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "plain RLS + owner index",
+      "setting": "iterative",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.905,
+      "p95_ms": 1.4523,
+      "plans": {
+        "owner": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "plain RLS + owner index",
+      "setting": "iterative",
+      "user": "u_0_1pct",
+      "owned": 57,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.256,
+      "p95_ms": 0.45379999999999976,
+      "plans": {
+        "owner": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "plain RLS + owner index",
+      "setting": "iterative + memory",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9635802469135802,
+      "p50_ms": 1.572,
+      "p95_ms": 2.60895,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "plain RLS + owner index",
+      "setting": "iterative + memory",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9689814814814814,
+      "p50_ms": 4.8125,
+      "p95_ms": 8.26555,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "plain RLS + owner index",
+      "setting": "iterative + memory",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9726851851851852,
+      "p50_ms": 9.2385,
+      "p95_ms": 15.575149999999999,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "plain RLS + owner index",
+      "setting": "iterative + memory",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.907,
+      "p95_ms": 1.1374499999999996,
+      "plans": {
+        "owner": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "plain RLS + owner index",
+      "setting": "iterative + memory",
+      "user": "u_0_1pct",
+      "owned": 57,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.258,
+      "p95_ms": 0.44459999999999994,
+      "plans": {
+        "owner": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index + query filter",
+      "setting": "default",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 9.99537037037037,
+      "zero_results": 0.0,
+      "short_results": 0.0015432098765432098,
+      "recall_at_10": 0.9631172839506172,
+      "p50_ms": 1.5855000000000001,
+      "p95_ms": 2.8251999999999997,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index + query filter",
+      "setting": "default",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 3.941358024691358,
+      "zero_results": 0.012345679012345678,
+      "short_results": 0.9969135802469136,
+      "recall_at_10": 0.3941358024691358,
+      "p50_ms": 1.917,
+      "p95_ms": 3.0882499999999995,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index + query filter",
+      "setting": "default",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 1.9969135802469136,
+      "zero_results": 0.11574074074074074,
+      "short_results": 1.0,
+      "recall_at_10": 0.19969135802469137,
+      "p50_ms": 1.8719999999999999,
+      "p95_ms": 3.04385,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index + query filter",
+      "setting": "default",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 0.44598765432098764,
+      "zero_results": 0.6373456790123457,
+      "short_results": 1.0,
+      "recall_at_10": 0.044598765432098765,
+      "p50_ms": 1.923,
+      "p95_ms": 3.16655,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index + query filter",
+      "setting": "default",
+      "user": "u_0_1pct",
+      "owned": 57,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.626,
+      "p95_ms": 0.7449499999999999,
+      "plans": {
+        "owner": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index + query filter",
+      "setting": "iterative",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9635802469135802,
+      "p50_ms": 1.6275,
+      "p95_ms": 2.8245499999999995,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index + query filter",
+      "setting": "iterative",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9689814814814814,
+      "p50_ms": 4.4510000000000005,
+      "p95_ms": 7.63725,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index + query filter",
+      "setting": "iterative",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9726851851851852,
+      "p50_ms": 8.2065,
+      "p95_ms": 13.9889,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index + query filter",
+      "setting": "iterative",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9891975308641975,
+      "p50_ms": 34.787499999999994,
+      "p95_ms": 62.846849999999996,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index + query filter",
+      "setting": "iterative",
+      "user": "u_0_1pct",
+      "owned": 57,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.628,
+      "p95_ms": 1.0076999999999996,
+      "plans": {
+        "owner": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index + query filter",
+      "setting": "iterative + memory",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9635802469135802,
+      "p50_ms": 1.6245,
+      "p95_ms": 2.84285,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index + query filter",
+      "setting": "iterative + memory",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9689814814814814,
+      "p50_ms": 4.348,
+      "p95_ms": 7.36395,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index + query filter",
+      "setting": "iterative + memory",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9726851851851852,
+      "p50_ms": 8.199000000000002,
+      "p95_ms": 13.773049999999996,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index + query filter",
+      "setting": "iterative + memory",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9891975308641975,
+      "p50_ms": 34.916,
+      "p95_ms": 62.34619999999999,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "wrapped RLS + owner index + query filter",
+      "setting": "iterative + memory",
+      "user": "u_0_1pct",
+      "owned": 57,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.623,
+      "p95_ms": 1.24095,
+      "plans": {
+        "owner": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "routed by rows owned",
+      "setting": "routed",
+      "user": "u_50pct",
+      "owned": 28800,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 0.9635802469135802,
+      "p50_ms": 1.658,
+      "p95_ms": 2.7417499999999997,
+      "plans": {
+        "hnsw": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "routed by rows owned",
+      "setting": "routed",
+      "user": "u_10pct",
+      "owned": 5760,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 36.177,
+      "p95_ms": 39.418549999999996,
+      "plans": {
+        "owner": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "routed by rows owned",
+      "setting": "routed",
+      "user": "u_5pct",
+      "owned": 2880,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 18.2835,
+      "p95_ms": 19.73215,
+      "plans": {
+        "owner": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "routed by rows owned",
+      "setting": "routed",
+      "user": "u_1pct",
+      "owned": 576,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 3.8485,
+      "p95_ms": 4.7932999999999995,
+      "plans": {
+        "owner": 648
+      },
+      "leaked_rows": 0
+    },
+    {
+      "backend": "local",
+      "config": "routed by rows owned",
+      "setting": "routed",
+      "user": "u_0_1pct",
+      "owned": 57,
+      "mean_returned": 10,
+      "zero_results": 0.0,
+      "short_results": 0.0,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.626,
+      "p95_ms": 0.8082499999999999,
+      "plans": {
+        "owner": 648
+      },
+      "leaked_rows": 0
+    }
+  ]
+}

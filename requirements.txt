@@ -1,0 +1,7 @@
+fastembed==0.9.1
+matplotlib==3.11.2
+numpy==2.4.6
+pgvector==0.5.1
+pixeltable-pgserver==0.7.1
+psycopg[binary]==3.3.6
+pytest==9.2.0

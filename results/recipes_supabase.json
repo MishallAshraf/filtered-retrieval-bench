@@ -1,0 +1,166 @@
+{
+  "questions": 100,
+  "k": 10,
+  "rows": [
+    {
+      "recipe": "sql function",
+      "user": "u_50pct",
+      "returned": 10,
+      "recall_at_10": 0.957,
+      "p50_ms": 81.564,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "sql function",
+      "user": "u_10pct",
+      "returned": 10,
+      "recall_at_10": 0.97,
+      "p50_ms": 34.759,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "sql function",
+      "user": "u_5pct",
+      "returned": 10,
+      "recall_at_10": 0.976,
+      "p50_ms": 147.3115,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "sql function",
+      "user": "u_1pct",
+      "returned": 10,
+      "recall_at_10": 0.986,
+      "p50_ms": 68.0295,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "sql function",
+      "user": "u_0_1pct",
+      "returned": 8.92,
+      "recall_at_10": 0.664,
+      "p50_ms": 36.554,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "sql function, more scan memory",
+      "user": "u_50pct",
+      "returned": 10,
+      "recall_at_10": 0.957,
+      "p50_ms": 53.506,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "sql function, more scan memory",
+      "user": "u_10pct",
+      "returned": 10,
+      "recall_at_10": 0.97,
+      "p50_ms": 40.8785,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "sql function, more scan memory",
+      "user": "u_5pct",
+      "returned": 10,
+      "recall_at_10": 0.976,
+      "p50_ms": 27.8415,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "sql function, more scan memory",
+      "user": "u_1pct",
+      "returned": 10,
+      "recall_at_10": 0.991,
+      "p50_ms": 51.0445,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "sql function, more scan memory",
+      "user": "u_0_1pct",
+      "returned": 10,
+      "recall_at_10": 0.998,
+      "p50_ms": 122.82900000000001,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "plpgsql function",
+      "user": "u_50pct",
+      "returned": 10,
+      "recall_at_10": 0.957,
+      "p50_ms": 53.926500000000004,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "plpgsql function",
+      "user": "u_10pct",
+      "returned": 10,
+      "recall_at_10": 0.97,
+      "p50_ms": 39.61,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "plpgsql function",
+      "user": "u_5pct",
+      "returned": 10,
+      "recall_at_10": 0.976,
+      "p50_ms": 29.0185,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "plpgsql function",
+      "user": "u_1pct",
+      "returned": 10,
+      "recall_at_10": 0.986,
+      "p50_ms": 51.9795,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "plpgsql function",
+      "user": "u_0_1pct",
+      "returned": 10,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.401,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "plpgsql function, dynamic query",
+      "user": "u_50pct",
+      "returned": 10,
+      "recall_at_10": 0.957,
+      "p50_ms": 23.293,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "plpgsql function, dynamic query",
+      "user": "u_10pct",
+      "returned": 10,
+      "recall_at_10": 0.97,
+      "p50_ms": 33.814499999999995,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "plpgsql function, dynamic query",
+      "user": "u_5pct",
+      "returned": 10,
+      "recall_at_10": 0.976,
+      "p50_ms": 23.6725,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "plpgsql function, dynamic query",
+      "user": "u_1pct",
+      "returned": 10,
+      "recall_at_10": 0.986,
+      "p50_ms": 44.1265,
+      "leaked_rows": 0
+    },
+    {
+      "recipe": "plpgsql function, dynamic query",
+      "user": "u_0_1pct",
+      "returned": 10,
+      "recall_at_10": 1.0,
+      "p50_ms": 0.447,
+      "leaked_rows": 0
+    }
+  ]
+}
