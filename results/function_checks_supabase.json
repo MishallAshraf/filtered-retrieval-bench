@@ -1,0 +1,1061 @@
+{
+  "questions": 648,
+  "k": 10,
+  "definition": {
+    "security_definer": false,
+    "policy": "(document_id IN ( SELECT guide_documents.id\n   FROM guide_documents\n  WHERE (guide_documents.owner_id = ( SELECT auth.uid() AS uid))))",
+    "function_filter": "s.document_id IN (SELECT d.id FROM public.guide_documents d WHERE d.owner_id = auth.uid())",
+    "users_checked": 13,
+    "users_with_different_rows": {}
+  },
+  "users": {
+    "u_50pct": {
+      "owned_sections": 28800,
+      "plans": {
+        "hnsw+owner": 20
+      },
+      "explain_p50_ms": 2.731,
+      "mean_returned": 10,
+      "short_results": 0,
+      "recall_at_10": 0.9618827160493827,
+      "out_of_order": 0,
+      "leaked_rows": 0,
+      "alerts": 0,
+      "missed_alerts": 0,
+      "explain_p50_ms_timing_on": 395.8925,
+      "timing": {
+        "searches": 20,
+        "warm_up": {
+          "qid": 0,
+          "plan": "hnsw+owner",
+          "first_method": "explain",
+          "first_ms": 874.248,
+          "explain_repeat_ms": 4.155,
+          "pgss_repeat_ms": 2.602791000000252
+        },
+        "first_run_explain_ms": {
+          "n": 10,
+          "p50": 482.4475,
+          "mean": 469.0195,
+          "max": 983.099
+        },
+        "first_run_pgss_ms": {
+          "n": 10,
+          "p50": 327.33958950000033,
+          "mean": 431.0512736999999,
+          "max": 780.0234989999999
+        },
+        "repeat_explain_ms": {
+          "n": 20,
+          "p50": 2.731,
+          "mean": 32.9816,
+          "max": 586.464
+        },
+        "repeat_pgss_ms": {
+          "n": 20,
+          "p50": 2.6828209999994215,
+          "mean": 9.106593849999763,
+          "max": 116.77356900000086
+        },
+        "plans": {
+          "hnsw+owner": 20
+        },
+        "rows": [
+          {
+            "qid": 0,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 874.248,
+            "explain_repeat_ms": 4.155,
+            "pgss_repeat_ms": 2.602791000000252
+          },
+          {
+            "qid": 1,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 724.1778989999993,
+            "explain_repeat_ms": 3.715,
+            "pgss_repeat_ms": 3.907592000000477
+          },
+          {
+            "qid": 2,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 803.209,
+            "explain_repeat_ms": 2.835,
+            "pgss_repeat_ms": 2.6257070000001477
+          },
+          {
+            "qid": 3,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 470.5760219999993,
+            "explain_repeat_ms": 4.458,
+            "pgss_repeat_ms": 14.608739000000242
+          },
+          {
+            "qid": 4,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 809.333,
+            "explain_repeat_ms": 4.132,
+            "pgss_repeat_ms": 3.2098299999997835
+          },
+          {
+            "qid": 5,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 780.0234989999999,
+            "explain_repeat_ms": 7.704,
+            "pgss_repeat_ms": 116.77356900000086
+          },
+          {
+            "qid": 6,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 512.323,
+            "explain_repeat_ms": 586.464,
+            "pgss_repeat_ms": 5.055201999999554
+          },
+          {
+            "qid": 7,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 313.68104999999923,
+            "explain_repeat_ms": 2.664,
+            "pgss_repeat_ms": 2.3556509999998525
+          },
+          {
+            "qid": 8,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 28.374,
+            "explain_repeat_ms": 13.487,
+            "pgss_repeat_ms": 3.2325419999997393
+          },
+          {
+            "qid": 9,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 311.66429400000015,
+            "explain_repeat_ms": 6.384,
+            "pgss_repeat_ms": 2.9659969999993336
+          },
+          {
+            "qid": 10,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 983.099,
+            "explain_repeat_ms": 3.322,
+            "pgss_repeat_ms": 3.0624449999995704
+          },
+          {
+            "qid": 11,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 770.9415649999992,
+            "explain_repeat_ms": 2.798,
+            "pgss_repeat_ms": 3.337883000000147
+          },
+          {
+            "qid": 12,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 533.701,
+            "explain_repeat_ms": 2.474,
+            "pgss_repeat_ms": 2.247386999999435
+          },
+          {
+            "qid": 13,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 314.04549600000064,
+            "explain_repeat_ms": 2.155,
+            "pgss_repeat_ms": 2.6280209999986255
+          },
+          {
+            "qid": 14,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 452.572,
+            "explain_repeat_ms": 2.477,
+            "pgss_repeat_ms": 2.236106000000291
+          },
+          {
+            "qid": 15,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 340.633683,
+            "explain_repeat_ms": 2.475,
+            "pgss_repeat_ms": 2.1541459999989456
+          },
+          {
+            "qid": 16,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 291.989,
+            "explain_repeat_ms": 2.508,
+            "pgss_repeat_ms": 2.5121760000001814
+          },
+          {
+            "qid": 17,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 113.32247400000051,
+            "explain_repeat_ms": 2.371,
+            "pgss_repeat_ms": 2.7376210000002175
+          },
+          {
+            "qid": 18,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 203.451,
+            "explain_repeat_ms": 2.569,
+            "pgss_repeat_ms": 2.3401359999988927
+          },
+          {
+            "qid": 19,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 171.44675500000085,
+            "explain_repeat_ms": 2.421,
+            "pgss_repeat_ms": 2.123911999999109
+          },
+          {
+            "qid": 20,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 72.144,
+            "explain_repeat_ms": 2.219,
+            "pgss_repeat_ms": 2.017214999999851
+          }
+        ]
+      }
+    },
+    "u_10pct": {
+      "owned_sections": 5760,
+      "plans": {
+        "hnsw+owner": 20
+      },
+      "explain_p50_ms": 2.91,
+      "mean_returned": 10,
+      "short_results": 0,
+      "recall_at_10": 0.9712962962962963,
+      "out_of_order": 0,
+      "leaked_rows": 0,
+      "alerts": 0,
+      "missed_alerts": 0,
+      "explain_p50_ms_timing_on": 1121.314,
+      "timing": {
+        "searches": 20,
+        "warm_up": {
+          "qid": 0,
+          "plan": "hnsw+owner",
+          "first_method": "explain",
+          "first_ms": 1135.952,
+          "explain_repeat_ms": 3.129,
+          "pgss_repeat_ms": 3.1075070000006235
+        },
+        "first_run_explain_ms": {
+          "n": 10,
+          "p50": 407.6405,
+          "mean": 526.4105000000001,
+          "max": 1269.476
+        },
+        "first_run_pgss_ms": {
+          "n": 10,
+          "p50": 507.13838750000014,
+          "mean": 522.2741352999999,
+          "max": 1056.8224790000004
+        },
+        "repeat_explain_ms": {
+          "n": 20,
+          "p50": 2.91,
+          "mean": 2.87865,
+          "max": 5.324
+        },
+        "repeat_pgss_ms": {
+          "n": 20,
+          "p50": 2.79837150000003,
+          "mean": 2.836824650000017,
+          "max": 5.036167000000205
+        },
+        "plans": {
+          "hnsw+owner": 20
+        },
+        "rows": [
+          {
+            "qid": 0,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 1135.952,
+            "explain_repeat_ms": 3.129,
+            "pgss_repeat_ms": 3.1075070000006235
+          },
+          {
+            "qid": 1,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 939.8917189999993,
+            "explain_repeat_ms": 3.385,
+            "pgss_repeat_ms": 3.3503380000001926
+          },
+          {
+            "qid": 2,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 604.771,
+            "explain_repeat_ms": 3.055,
+            "pgss_repeat_ms": 2.60929699999906
+          },
+          {
+            "qid": 3,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 717.5294489999997,
+            "explain_repeat_ms": 2.859,
+            "pgss_repeat_ms": 2.7753819999998086
+          },
+          {
+            "qid": 4,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 1269.476,
+            "explain_repeat_ms": 3.659,
+            "pgss_repeat_ms": 3.5718870000000607
+          },
+          {
+            "qid": 5,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 1056.8224790000004,
+            "explain_repeat_ms": 3.53,
+            "pgss_repeat_ms": 4.1066179999997985
+          },
+          {
+            "qid": 6,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 1097.47,
+            "explain_repeat_ms": 3.886,
+            "pgss_repeat_ms": 3.8663049999995565
+          },
+          {
+            "qid": 7,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 558.6324750000003,
+            "explain_repeat_ms": 2.283,
+            "pgss_repeat_ms": 2.3492930000011256
+          },
+          {
+            "qid": 8,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 410.355,
+            "explain_repeat_ms": 2.336,
+            "pgss_repeat_ms": 2.2752760000003036
+          },
+          {
+            "qid": 9,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 455.64429999999993,
+            "explain_repeat_ms": 2.455,
+            "pgss_repeat_ms": 2.411190999999235
+          },
+          {
+            "qid": 10,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 445.115,
+            "explain_repeat_ms": 3.229,
+            "pgss_repeat_ms": 3.2235729999993055
+          },
+          {
+            "qid": 11,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 801.7900680000002,
+            "explain_repeat_ms": 5.324,
+            "pgss_repeat_ms": 5.036167000000205
+          },
+          {
+            "qid": 12,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 404.926,
+            "explain_repeat_ms": 3.168,
+            "pgss_repeat_ms": 3.0670739999986836
+          },
+          {
+            "qid": 13,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 223.92985600000065,
+            "explain_repeat_ms": 1.648,
+            "pgss_repeat_ms": 1.6115979999995034
+          },
+          {
+            "qid": 14,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 361.742,
+            "explain_repeat_ms": 3.1,
+            "pgss_repeat_ms": 2.821361000000252
+          },
+          {
+            "qid": 15,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 180.22990199999913,
+            "explain_repeat_ms": 2.163,
+            "pgss_repeat_ms": 2.148354000000836
+          },
+          {
+            "qid": 16,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 385.307,
+            "explain_repeat_ms": 2.961,
+            "pgss_repeat_ms": 2.922790000000532
+          },
+          {
+            "qid": 17,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 161.55931899999996,
+            "explain_repeat_ms": 2.185,
+            "pgss_repeat_ms": 2.2228890000005777
+          },
+          {
+            "qid": 18,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 227.908,
+            "explain_repeat_ms": 2.849,
+            "pgss_repeat_ms": 2.984671000000162
+          },
+          {
+            "qid": 19,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 126.71178599999985,
+            "explain_repeat_ms": 1.976,
+            "pgss_repeat_ms": 1.7682870000007824
+          },
+          {
+            "qid": 20,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 57.035,
+            "explain_repeat_ms": 1.522,
+            "pgss_repeat_ms": 1.6141420000003563
+          }
+        ]
+      }
+    },
+    "u_5pct": {
+      "owned_sections": 2880,
+      "plans": {
+        "docid+owner": 20
+      },
+      "explain_p50_ms": 7.906499999999999,
+      "mean_returned": 10,
+      "short_results": 0,
+      "recall_at_10": 1.0,
+      "out_of_order": 0,
+      "leaked_rows": 0,
+      "alerts": 0,
+      "missed_alerts": 0
+    },
+    "u_1pct": {
+      "owned_sections": 576,
+      "plans": {
+        "docid+owner": 20
+      },
+      "explain_p50_ms": 1.81,
+      "mean_returned": 10,
+      "short_results": 0,
+      "recall_at_10": 1.0,
+      "out_of_order": 0,
+      "leaked_rows": 0,
+      "alerts": 0,
+      "missed_alerts": 0
+    },
+    "u_0_1pct": {
+      "owned_sections": 56,
+      "plans": {
+        "docid+owner": 20
+      },
+      "explain_p50_ms": 0.33299999999999996,
+      "mean_returned": 10,
+      "short_results": 0,
+      "recall_at_10": 1.0,
+      "out_of_order": 0,
+      "leaked_rows": 0,
+      "alerts": 0,
+      "missed_alerts": 0
+    },
+    "far_0_5pct": {
+      "owned_sections": 288,
+      "plans": {
+        "docid+owner": 20
+      },
+      "explain_p50_ms": 1.3359999999999999,
+      "mean_returned": 10,
+      "short_results": 0,
+      "recall_at_10": 1.0,
+      "out_of_order": 0,
+      "leaked_rows": 0,
+      "alerts": 0,
+      "missed_alerts": 0
+    },
+    "far_3pct": {
+      "owned_sections": 1728,
+      "plans": {
+        "docid+owner": 20
+      },
+      "explain_p50_ms": 4.4195,
+      "mean_returned": 10,
+      "short_results": 0,
+      "recall_at_10": 1.0,
+      "out_of_order": 0,
+      "leaked_rows": 0,
+      "alerts": 0,
+      "missed_alerts": 0
+    },
+    "far_10pct": {
+      "owned_sections": 5760,
+      "plans": {
+        "hnsw+owner": 20
+      },
+      "explain_p50_ms": 2.9105,
+      "mean_returned": 10,
+      "short_results": 0,
+      "recall_at_10": 0.9649691358024691,
+      "out_of_order": 0,
+      "leaked_rows": 0,
+      "alerts": 0,
+      "missed_alerts": 0,
+      "explain_p50_ms_timing_on": 538.637,
+      "timing": {
+        "searches": 20,
+        "warm_up": {
+          "qid": 0,
+          "plan": "hnsw+owner",
+          "first_method": "explain",
+          "first_ms": 231.73,
+          "explain_repeat_ms": 2.94,
+          "pgss_repeat_ms": 2.8043280000001687
+        },
+        "first_run_explain_ms": {
+          "n": 10,
+          "p50": 203.4605,
+          "mean": 214.85499999999996,
+          "max": 461.93
+        },
+        "first_run_pgss_ms": {
+          "n": 10,
+          "p50": 228.6756445000001,
+          "mean": 288.72884879999947,
+          "max": 667.5957780000026
+        },
+        "repeat_explain_ms": {
+          "n": 20,
+          "p50": 2.9105,
+          "mean": 3.6674999999999995,
+          "max": 18.06
+        },
+        "repeat_pgss_ms": {
+          "n": 20,
+          "p50": 2.8104684999998426,
+          "mean": 2.9335077000003364,
+          "max": 4.153376999998727
+        },
+        "plans": {
+          "hnsw+owner": 20
+        },
+        "rows": [
+          {
+            "qid": 0,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 231.73,
+            "explain_repeat_ms": 2.94,
+            "pgss_repeat_ms": 2.8043280000001687
+          },
+          {
+            "qid": 1,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 257.471098,
+            "explain_repeat_ms": 3.307,
+            "pgss_repeat_ms": 3.2622510000001057
+          },
+          {
+            "qid": 2,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 268.085,
+            "explain_repeat_ms": 18.06,
+            "pgss_repeat_ms": 3.543990999998641
+          },
+          {
+            "qid": 3,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 579.6857619999992,
+            "explain_repeat_ms": 2.757,
+            "pgss_repeat_ms": 2.7683090000027732
+          },
+          {
+            "qid": 4,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 461.93,
+            "explain_repeat_ms": 2.215,
+            "pgss_repeat_ms": 2.811933000000863
+          },
+          {
+            "qid": 5,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 667.5957780000026,
+            "explain_repeat_ms": 4.025,
+            "pgss_repeat_ms": 4.153376999998727
+          },
+          {
+            "qid": 6,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 368.679,
+            "explain_repeat_ms": 3.802,
+            "pgss_repeat_ms": 3.7640470000005735
+          },
+          {
+            "qid": 7,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 199.8801910000002,
+            "explain_repeat_ms": 2.181,
+            "pgss_repeat_ms": 2.132100000002538
+          },
+          {
+            "qid": 8,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 219.583,
+            "explain_repeat_ms": 3.137,
+            "pgss_repeat_ms": 2.809003999998822
+          },
+          {
+            "qid": 9,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 281.21582800000033,
+            "explain_repeat_ms": 3.325,
+            "pgss_repeat_ms": 3.062830999999278
+          },
+          {
+            "qid": 10,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 267.604,
+            "explain_repeat_ms": 3.874,
+            "pgss_repeat_ms": 3.797416000001249
+          },
+          {
+            "qid": 11,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 93.46783499999947,
+            "explain_repeat_ms": 2.598,
+            "pgss_repeat_ms": 2.570159999999305
+          },
+          {
+            "qid": 12,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 187.338,
+            "explain_repeat_ms": 2.936,
+            "pgss_repeat_ms": 3.1806610000021465
+          },
+          {
+            "qid": 13,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 300.02576399999816,
+            "explain_repeat_ms": 2.438,
+            "pgss_repeat_ms": 2.353264000001218
+          },
+          {
+            "qid": 14,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 77.349,
+            "explain_repeat_ms": 2.114,
+            "pgss_repeat_ms": 1.9876039999981003
+          },
+          {
+            "qid": 15,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 194.06830999999875,
+            "explain_repeat_ms": 3.265,
+            "pgss_repeat_ms": 3.247450000002573
+          },
+          {
+            "qid": 16,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 135.507,
+            "explain_repeat_ms": 2.885,
+            "pgss_repeat_ms": 2.8085030000002007
+          },
+          {
+            "qid": 17,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 119.75245599999835,
+            "explain_repeat_ms": 2.574,
+            "pgss_repeat_ms": 2.7926279999992403
+          },
+          {
+            "qid": 18,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 67.158,
+            "explain_repeat_ms": 2.132,
+            "pgss_repeat_ms": 2.0963599999995495
+          },
+          {
+            "qid": 19,
+            "plan": "hnsw+owner",
+            "first_method": "pgss",
+            "first_ms": 194.1254659999977,
+            "explain_repeat_ms": 3.27,
+            "pgss_repeat_ms": 3.2128170000032696
+          },
+          {
+            "qid": 20,
+            "plan": "hnsw+owner",
+            "first_method": "explain",
+            "first_ms": 95.317,
+            "explain_repeat_ms": 2.455,
+            "pgss_repeat_ms": 2.3154479999975592
+          }
+        ]
+      }
+    },
+    "sw_1_5pct": {
+      "owned_sections": 864,
+      "plans": {
+        "docid+owner": 20
+      },
+      "explain_p50_ms": 2.4635,
+      "mean_returned": 10,
+      "short_results": 0,
+      "recall_at_10": 1.0,
+      "out_of_order": 0,
+      "leaked_rows": 0,
+      "alerts": 0,
+      "missed_alerts": 0
+    },
+    "sw_2pct": {
+      "owned_sections": 1152,
+      "plans": {
+        "docid+owner": 20
+      },
+      "explain_p50_ms": 4.179,
+      "mean_returned": 10,
+      "short_results": 0,
+      "recall_at_10": 1.0,
+      "out_of_order": 0,
+      "leaked_rows": 0,
+      "alerts": 0,
+      "missed_alerts": 0
+    },
+    "sw_2_5pct": {
+      "owned_sections": 1440,
+      "plans": {
+        "docid+owner": 20
+      },
+      "explain_p50_ms": 3.963,
+      "mean_returned": 10,
+      "short_results": 0,
+      "recall_at_10": 1.0,
+      "out_of_order": 0,
+      "leaked_rows": 0,
+      "alerts": 0,
+      "missed_alerts": 0
+    },
+    "sw_3pct": {
+      "owned_sections": 1728,
+      "plans": {
+        "docid+owner": 20
+      },
+      "explain_p50_ms": 4.6395,
+      "mean_returned": 10,
+      "short_results": 0,
+      "recall_at_10": 1.0,
+      "out_of_order": 0,
+      "leaked_rows": 0,
+      "alerts": 0,
+      "missed_alerts": 0
+    },
+    "sw_4pct": {
+      "owned_sections": 2304,
+      "plans": {
+        "docid+owner": 20
+      },
+      "explain_p50_ms": 6.5625,
+      "mean_returned": 10,
+      "short_results": 0,
+      "recall_at_10": 1.0,
+      "out_of_order": 0,
+      "leaked_rows": 0,
+      "alerts": 0,
+      "missed_alerts": 0
+    }
+  },
+  "sample_plans": {
+    "u_50pct": "Sort  (cost=707.88..707.91 rows=10 width=20) (actual time=771.452..771.458 rows=10 loops=1)\n  Sort Key: ((nearest.distance + '0'::double precision))\n  Sort Method: quicksort  Memory: 25kB\n  Buffers: shared hit=548 read=559\n  CTE nearest\n    ->  Limit  (cost=267.20..707.49 rows=10 width=12) (actual time=758.444..768.283 rows=10 loops=1)\n          Buffers: shared hit=548 read=559\n          InitPlan 4\n            ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.021..0.022 rows=1 loops=1)\n          ->  Nested Loop  (cost=267.17..45528.96 rows=1028 width=12) (actual time=758.442..768.275 rows=10 loops=1)\n                Buffers: shared hit=548 read=559\n                ->  Index Scan using guide_sections_embedding on guide_sections s  (cost=266.87..42422.72 rows=28800 width=1552) (actual time=753.113..753.251 rows=10 loops=1)\n                      Order By: (embedding <=> '[0.054958034,-0.06229176,0.058387093,-0.04795135,0.05430149,0.02049663,0.07478535,-0.0409723,-0.1194586,-0.027420782,0.018627979,-0.03771741,-0.0028829852,0.0016788208,-0.0048630172,0.015843388,-0.010938108,-0.11203924,-0.0054362034,0.026607277,0.073716186,-0.042447597,-0.004297331,0.004534048,0.064883426,-0.051114693,0.054736476,0.050465286,0.037875056,-0.045829326,0.060525436,-0.10910286,-0.05248543,0.0022687146,-0.023183463,-0.023434976,0.09763841,-0.051571835,-0.102376185,-0.0623407,0.028195696,-0.08667582,-0.026955236,0.011321548,0.01415471,0.04109381,-0.008323441,-0.006529052,-0.060445342,0.063486405,0.10794336,0.00691775,0.028885052,0.035704114,0.047709007,-0.12169383,-0.0057937964,0.03717187,0.01063302,-0.085719295,0.016408041,-0.05465717,0.065403596,0.050098132,-0.005082441,0.0011220687,0.04278905,-0.05464061,-0.039623823,-0.06995231,-0.027992785,-0.09575008,-0.032313466,0.025356516,0.015387631,0.095590934,0.024778534,0.04051839,-0.03898606,-0.009485195,-0.02223496,0.112332165,-0.021043891,-0.1221985,-0.0526421,-0.041727837,0.011468573,0.016407598,-0.028213186,0.06435277,0.09238792,-0.061341867,-0.008341505,0.08421718,0.017876826,-0.0003603531,0.030333925,0.004045333,-0.093374096,-0.04632205,-0.014777925,0.13957796,-0.10229407,0.01924364,-0.048390444,0.06121497,0.02850841,0.06470873,0.022164887,-0.048639327,0.05255517,0.008310333,-0.13050579,0.023528395,-0.056252018,-0.0077300784,-0.070459984,-0.06626624,0.030244669,-0.100561336,0.045136124,0.10183384,-0.054050952,-0.029524256,-0.057948068,-0.063399315,-0.07552199,-3.1554136e-33,-0.033909407,0.028104346,-0.066450216,-0.07705907,0.020973867,0.038808964,0.016312975,0.028606392,-0.05660137,-0.049256995,-0.041251317,0.109654896,0.07408588,0.026072796,-0.0082638,-0.00773521,0.029702693,0.047386046,0.11379733,0.056248806,0.08848527,-0.026722193,0.036991954,-0.04204535,-0.028383324,-0.0092400955,-0.061815858,0.00446853,0.06824343,0.020975081,-0.029271292,-0.028596316,0.007830601,0.02321154,-0.03382836,0.03618408,-0.014183259,0.021872396,0.050768107,-0.06706773,-0.022698918,0.07276677,0.09488219,0.003633421,-0.06641784,-0.026181001,0.052714713,0.026178561,-0.067099646,-0.02275578,0.04279168,-0.06684077,0.03805957,-0.113398604,0.021457193,-0.01858327,0.010245457,0.012665366,0.00920101,-0.07768891,-0.054075785,0.06451953,-0.036241516,0.014791346,-0.11636673,-0.009656021,0.033800017,-0.046272215,-0.108299315,-0.052646693,0.008627103,0.02952727,0.038394894,-0.025697414,-0.044405986,0.003573785,-0.03929941,0.0064769713,0.047706157,0.044054836,-0.03884105,-0.0254668,-0.03437883,-0.0210365,0.03327994,-0.011896176,0.06368984,0.0874531,0.078335084,0.04442379,0.006836812,-0.026513001,-0.003436775,0.017989896,0.05872616,3.263541e-34,-0.013649027,0.0003431669,0.03969126,-0.024609266,0.03017127,0.03894422,0.13225394,0.071802646,-0.03491762,-0.024890369,0.04500413,-0.011945722,-0.010512475,0.032997865,-0.0007322394,-0.092883535,-0.013211769,-0.006508633,0.0855207,0.0008051657,-0.0046309475,-0.03822451,0.06487195,0.049584083,0.022991082,0.026752183,-0.05838457,-0.09081487,-0.03698052,-0.040241152,0.034790765,0.011768115,-0.08073041,0.046232484,-0.019247238,0.011725496,-0.025638018,-0.08284255,0.06183174,-0.06917483,-0.004754256,0.01730412,0.0060805725,0.06934726,0.025079789,0.05210587,-0.052408665,0.05973394,-0.046289288,0.01956836,-0.01568311,0.07369899,-0.03246156,0.008761008,-0.03599101,0.0281325,0.042968262,-0.034864396,-0.013595347,0.003638631,0.014452265,0.05671808,-0.0011961893,0.039401308,-0.044029213,-0.03576864,0.03870191,-0.0076855887,0.008002262,-0.007696878,0.015139228,-0.11479637,-0.047618978,-0.1308363,0.0033340647,0.024410315,0.075819686,-0.07504602,-0.010900552,0.0048147035,0.037513435,-0.038010992,-0.0024601088,0.027746739,0.049595032,-0.020252353,0.0017644329,0.010981579,0.041794386,0.004932131,-0.042414878,-0.057846487,-0.0012618895,0.047772616,0.066992596,-1.954726e-08,-0.064182244,0.031895168,0.03557131,0.08291499,-0.07150851,0.0028605245,0.006227369,0.017095957,0.03484121,-0.013597613,0.0927779,-0.045920726,-0.031139908,0.006245511,-0.046899635,0.016461084,0.034118455,0.0626974,0.037542596,0.05405933,0.012650653,0.0055504744,0.0069850073,-0.0011022248,-0.071919,0.05410474,0.049890045,-0.012916149,-0.03556444,-0.020004181,-0.0318706,0.009726396,-0.08416161,0.10418485,-0.096671104,-0.08448281,-0.033570148,0.08464976,-0.032882996,0.053002644,0.02064097,0.019348223,0.028387124,-0.030192249,0.028621184,0.07287867,-0.080233,0.03530834,-0.022818074,0.004413901,0.0027222692,-0.08478792,0.05718159,0.019955825,0.007177181,-0.02834581,-0.01693738,0.058297746,0.011376631,-0.032739192,0.015435723,-0.09342576,0.014976108,0.054440003]'::vector)\n                      Filter: (ANY (document_id = (hashed SubPlan 3).col1))\n                      Rows Removed by Filter: 3\n                      Buffers: shared hit=527 read=550\n                      SubPlan 3\n                        ->  Result  (cost=0.35..84.33 rows=514 width=4) (actual time=3.989..7.783 rows=3600 loops=1)\n                              One-Time Filter: ((InitPlan 2).col1 = (InitPlan 1).col1)\n                              Buffers: shared hit=60 read=5\n                              InitPlan 1\n                                ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.018..0.018 rows=1 loops=1)\n                              InitPlan 2\n                                ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.006..0.006 rows=1 loops=1)\n                              ->  Index Scan using guide_documents_owner on guide_documents  (cost=0.35..84.33 rows=514 width=4) (actual time=3.980..7.313 rows=3600 loops=1)\n                                    Index Cond: (owner_id = (InitPlan 1).col1)\n                                    Buffers: shared hit=60 read=5\n                ->  Memoize  (cost=0.29..0.34 rows=1 width=4) (actual time=1.499..1.500 rows=1 loops=10)\n                      Cache Key: s.document_id\n                      Cache Mode: logical\n                      Hits: 0  Misses: 10  Evictions: 0  Overflows: 0  Memory Usage: 2kB\n                      Buffers: shared hit=21 read=9\n                      ->  Index Scan using guide_documents_pkey on guide_documents d  (cost=0.28..0.33 rows=1 width=4) (actual time=1.093..1.093 rows=1 loops=10)\n                            Index Cond: (id = s.document_id)\n                            Filter: ((owner_id = (InitPlan 4).col1) AND (owner_id = (COALESCE(NULLIF(current_setting('request.jwt.claim.sub'::text, true), ''::text), ((NULLIF(current_setting('request.jwt.claims'::text, true), ''::text))::jsonb ->> 'sub'::text)))::uuid))\n                            Buffers: shared hit=21 read=9\n  ->  CTE Scan on nearest  (cost=0.00..0.23 rows=10 width=20) (actual time=758.451..768.298 rows=10 loops=1)\n        Buffers: shared hit=548 read=559\nPlanning:\n  Buffers: shared hit=89 read=24\nPlanning Time: 66.473 ms\nExecution Time: 782.965 ms",
+    "u_10pct": "Sort  (cost=2486.21..2486.23 rows=10 width=20) (actual time=2855.780..2855.785 rows=10 loops=1)\n  Sort Key: ((nearest.distance + '0'::double precision))\n  Sort Method: quicksort  Memory: 25kB\n  Buffers: shared hit=691 read=1617\n  CTE nearest\n    ->  Limit  (cost=267.20..2485.81 rows=10 width=12) (actual time=1471.885..2853.909 rows=10 loops=1)\n          Buffers: shared hit=691 read=1617\n          InitPlan 4\n            ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.019..0.020 rows=1 loops=1)\n          ->  Nested Loop  (cost=267.17..45526.90 rows=204 width=12) (actual time=1471.884..2853.902 rows=10 loops=1)\n                Buffers: shared hit=691 read=1617\n                ->  Index Scan using guide_sections_embedding on guide_sections s  (cost=266.87..42422.72 rows=28800 width=1552) (actual time=1463.876..2834.331 rows=10 loops=1)\n                      Order By: (embedding <=> '[0.054958034,-0.06229176,0.058387093,-0.04795135,0.05430149,0.02049663,0.07478535,-0.0409723,-0.1194586,-0.027420782,0.018627979,-0.03771741,-0.0028829852,0.0016788208,-0.0048630172,0.015843388,-0.010938108,-0.11203924,-0.0054362034,0.026607277,0.073716186,-0.042447597,-0.004297331,0.004534048,0.064883426,-0.051114693,0.054736476,0.050465286,0.037875056,-0.045829326,0.060525436,-0.10910286,-0.05248543,0.0022687146,-0.023183463,-0.023434976,0.09763841,-0.051571835,-0.102376185,-0.0623407,0.028195696,-0.08667582,-0.026955236,0.011321548,0.01415471,0.04109381,-0.008323441,-0.006529052,-0.060445342,0.063486405,0.10794336,0.00691775,0.028885052,0.035704114,0.047709007,-0.12169383,-0.0057937964,0.03717187,0.01063302,-0.085719295,0.016408041,-0.05465717,0.065403596,0.050098132,-0.005082441,0.0011220687,0.04278905,-0.05464061,-0.039623823,-0.06995231,-0.027992785,-0.09575008,-0.032313466,0.025356516,0.015387631,0.095590934,0.024778534,0.04051839,-0.03898606,-0.009485195,-0.02223496,0.112332165,-0.021043891,-0.1221985,-0.0526421,-0.041727837,0.011468573,0.016407598,-0.028213186,0.06435277,0.09238792,-0.061341867,-0.008341505,0.08421718,0.017876826,-0.0003603531,0.030333925,0.004045333,-0.093374096,-0.04632205,-0.014777925,0.13957796,-0.10229407,0.01924364,-0.048390444,0.06121497,0.02850841,0.06470873,0.022164887,-0.048639327,0.05255517,0.008310333,-0.13050579,0.023528395,-0.056252018,-0.0077300784,-0.070459984,-0.06626624,0.030244669,-0.100561336,0.045136124,0.10183384,-0.054050952,-0.029524256,-0.057948068,-0.063399315,-0.07552199,-3.1554136e-33,-0.033909407,0.028104346,-0.066450216,-0.07705907,0.020973867,0.038808964,0.016312975,0.028606392,-0.05660137,-0.049256995,-0.041251317,0.109654896,0.07408588,0.026072796,-0.0082638,-0.00773521,0.029702693,0.047386046,0.11379733,0.056248806,0.08848527,-0.026722193,0.036991954,-0.04204535,-0.028383324,-0.0092400955,-0.061815858,0.00446853,0.06824343,0.020975081,-0.029271292,-0.028596316,0.007830601,0.02321154,-0.03382836,0.03618408,-0.014183259,0.021872396,0.050768107,-0.06706773,-0.022698918,0.07276677,0.09488219,0.003633421,-0.06641784,-0.026181001,0.052714713,0.026178561,-0.067099646,-0.02275578,0.04279168,-0.06684077,0.03805957,-0.113398604,0.021457193,-0.01858327,0.010245457,0.012665366,0.00920101,-0.07768891,-0.054075785,0.06451953,-0.036241516,0.014791346,-0.11636673,-0.009656021,0.033800017,-0.046272215,-0.108299315,-0.052646693,0.008627103,0.02952727,0.038394894,-0.025697414,-0.044405986,0.003573785,-0.03929941,0.0064769713,0.047706157,0.044054836,-0.03884105,-0.0254668,-0.03437883,-0.0210365,0.03327994,-0.011896176,0.06368984,0.0874531,0.078335084,0.04442379,0.006836812,-0.026513001,-0.003436775,0.017989896,0.05872616,3.263541e-34,-0.013649027,0.0003431669,0.03969126,-0.024609266,0.03017127,0.03894422,0.13225394,0.071802646,-0.03491762,-0.024890369,0.04500413,-0.011945722,-0.010512475,0.032997865,-0.0007322394,-0.092883535,-0.013211769,-0.006508633,0.0855207,0.0008051657,-0.0046309475,-0.03822451,0.06487195,0.049584083,0.022991082,0.026752183,-0.05838457,-0.09081487,-0.03698052,-0.040241152,0.034790765,0.011768115,-0.08073041,0.046232484,-0.019247238,0.011725496,-0.025638018,-0.08284255,0.06183174,-0.06917483,-0.004754256,0.01730412,0.0060805725,0.06934726,0.025079789,0.05210587,-0.052408665,0.05973394,-0.046289288,0.01956836,-0.01568311,0.07369899,-0.03246156,0.008761008,-0.03599101,0.0281325,0.042968262,-0.034864396,-0.013595347,0.003638631,0.014452265,0.05671808,-0.0011961893,0.039401308,-0.044029213,-0.03576864,0.03870191,-0.0076855887,0.008002262,-0.007696878,0.015139228,-0.11479637,-0.047618978,-0.1308363,0.0033340647,0.024410315,0.075819686,-0.07504602,-0.010900552,0.0048147035,0.037513435,-0.038010992,-0.0024601088,0.027746739,0.049595032,-0.020252353,0.0017644329,0.010981579,0.041794386,0.004932131,-0.042414878,-0.057846487,-0.0012618895,0.047772616,0.066992596,-1.954726e-08,-0.064182244,0.031895168,0.03557131,0.08291499,-0.07150851,0.0028605245,0.006227369,0.017095957,0.03484121,-0.013597613,0.0927779,-0.045920726,-0.031139908,0.006245511,-0.046899635,0.016461084,0.034118455,0.0626974,0.037542596,0.05405933,0.012650653,0.0055504744,0.0069850073,-0.0011022248,-0.071919,0.05410474,0.049890045,-0.012916149,-0.03556444,-0.020004181,-0.0318706,0.009726396,-0.08416161,0.10418485,-0.096671104,-0.08448281,-0.033570148,0.08464976,-0.032882996,0.053002644,0.02064097,0.019348223,0.028387124,-0.030192249,0.028621184,0.07287867,-0.080233,0.03530834,-0.022818074,0.004413901,0.0027222692,-0.08478792,0.05718159,0.019955825,0.007177181,-0.02834581,-0.01693738,0.058297746,0.011376631,-0.032739192,0.015435723,-0.09342576,0.014976108,0.054440003]'::vector)\n                      Filter: (ANY (document_id = (hashed SubPlan 3).col1))\n                      Rows Removed by Filter: 108\n                      Buffers: shared hit=669 read=1609\n                      SubPlan 3\n                        ->  Result  (cost=0.35..84.33 rows=514 width=4) (actual time=5.196..5.513 rows=720 loops=1)\n                              One-Time Filter: ((InitPlan 2).col1 = (InitPlan 1).col1)\n                              Buffers: shared hit=60 read=2\n                              InitPlan 1\n                                ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.018..0.018 rows=1 loops=1)\n                              InitPlan 2\n                                ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.592..0.592 rows=1 loops=1)\n                              ->  Index Scan using guide_documents_owner on guide_documents  (cost=0.35..84.33 rows=514 width=4) (actual time=4.601..4.832 rows=720 loops=1)\n                                    Index Cond: (owner_id = (InitPlan 1).col1)\n                                    Buffers: shared hit=60 read=2\n                ->  Memoize  (cost=0.29..0.34 rows=1 width=4) (actual time=1.953..1.953 rows=1 loops=10)\n                      Cache Key: s.document_id\n                      Cache Mode: logical\n                      Hits: 0  Misses: 10  Evictions: 0  Overflows: 0  Memory Usage: 2kB\n                      Buffers: shared hit=22 read=8\n                      ->  Index Scan using guide_documents_pkey on guide_documents d  (cost=0.28..0.33 rows=1 width=4) (actual time=1.445..1.445 rows=1 loops=10)\n                            Index Cond: (id = s.document_id)\n                            Filter: ((owner_id = (InitPlan 4).col1) AND (owner_id = (COALESCE(NULLIF(current_setting('request.jwt.claim.sub'::text, true), ''::text), ((NULLIF(current_setting('request.jwt.claims'::text, true), ''::text))::jsonb ->> 'sub'::text)))::uuid))\n                            Buffers: shared hit=22 read=8\n  ->  CTE Scan on nearest  (cost=0.00..0.23 rows=10 width=20) (actual time=1471.890..2853.926 rows=10 loops=1)\n        Buffers: shared hit=691 read=1617\nPlanning:\n  Buffers: shared hit=5 read=8\nPlanning Time: 65.043 ms\nExecution Time: 2869.925 ms",
+    "u_5pct": "Sort  (cost=2594.03..2594.05 rows=10 width=20) (actual time=192.122..192.127 rows=10 loops=1)\n  Sort Key: ((nearest.distance + '0'::double precision))\n  Sort Method: quicksort  Memory: 25kB\n  Buffers: shared hit=3601 read=121\n  CTE nearest\n    ->  Limit  (cost=2593.61..2593.64 rows=10 width=12) (actual time=190.396..190.402 rows=10 loops=1)\n          Buffers: shared hit=3601 read=121\n          InitPlan 4\n            ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.018..0.018 rows=1 loops=1)\n          ->  Sort  (cost=2593.58..2593.84 rows=104 width=12) (actual time=190.394..190.398 rows=10 loops=1)\n                Sort Key: ((s.embedding <=> '[0.054958034,-0.06229176,0.058387093,-0.04795135,0.05430149,0.02049663,0.07478535,-0.0409723,-0.1194586,-0.027420782,0.018627979,-0.03771741,-0.0028829852,0.0016788208,-0.0048630172,0.015843388,-0.010938108,-0.11203924,-0.0054362034,0.026607277,0.073716186,-0.042447597,-0.004297331,0.004534048,0.064883426,-0.051114693,0.054736476,0.050465286,0.037875056,-0.045829326,0.060525436,-0.10910286,-0.05248543,0.0022687146,-0.023183463,-0.023434976,0.09763841,-0.051571835,-0.102376185,-0.0623407,0.028195696,-0.08667582,-0.026955236,0.011321548,0.01415471,0.04109381,-0.008323441,-0.006529052,-0.060445342,0.063486405,0.10794336,0.00691775,0.028885052,0.035704114,0.047709007,-0.12169383,-0.0057937964,0.03717187,0.01063302,-0.085719295,0.016408041,-0.05465717,0.065403596,0.050098132,-0.005082441,0.0011220687,0.04278905,-0.05464061,-0.039623823,-0.06995231,-0.027992785,-0.09575008,-0.032313466,0.025356516,0.015387631,0.095590934,0.024778534,0.04051839,-0.03898606,-0.009485195,-0.02223496,0.112332165,-0.021043891,-0.1221985,-0.0526421,-0.041727837,0.011468573,0.016407598,-0.028213186,0.06435277,0.09238792,-0.061341867,-0.008341505,0.08421718,0.017876826,-0.0003603531,0.030333925,0.004045333,-0.093374096,-0.04632205,-0.014777925,0.13957796,-0.10229407,0.01924364,-0.048390444,0.06121497,0.02850841,0.06470873,0.022164887,-0.048639327,0.05255517,0.008310333,-0.13050579,0.023528395,-0.056252018,-0.0077300784,-0.070459984,-0.06626624,0.030244669,-0.100561336,0.045136124,0.10183384,-0.054050952,-0.029524256,-0.057948068,-0.063399315,-0.07552199,-3.1554136e-33,-0.033909407,0.028104346,-0.066450216,-0.07705907,0.020973867,0.038808964,0.016312975,0.028606392,-0.05660137,-0.049256995,-0.041251317,0.109654896,0.07408588,0.026072796,-0.0082638,-0.00773521,0.029702693,0.047386046,0.11379733,0.056248806,0.08848527,-0.026722193,0.036991954,-0.04204535,-0.028383324,-0.0092400955,-0.061815858,0.00446853,0.06824343,0.020975081,-0.029271292,-0.028596316,0.007830601,0.02321154,-0.03382836,0.03618408,-0.014183259,0.021872396,0.050768107,-0.06706773,-0.022698918,0.07276677,0.09488219,0.003633421,-0.06641784,-0.026181001,0.052714713,0.026178561,-0.067099646,-0.02275578,0.04279168,-0.06684077,0.03805957,-0.113398604,0.021457193,-0.01858327,0.010245457,0.012665366,0.00920101,-0.07768891,-0.054075785,0.06451953,-0.036241516,0.014791346,-0.11636673,-0.009656021,0.033800017,-0.046272215,-0.108299315,-0.052646693,0.008627103,0.02952727,0.038394894,-0.025697414,-0.044405986,0.003573785,-0.03929941,0.0064769713,0.047706157,0.044054836,-0.03884105,-0.0254668,-0.03437883,-0.0210365,0.03327994,-0.011896176,0.06368984,0.0874531,0.078335084,0.04442379,0.006836812,-0.026513001,-0.003436775,0.017989896,0.05872616,3.263541e-34,-0.013649027,0.0003431669,0.03969126,-0.024609266,0.03017127,0.03894422,0.13225394,0.071802646,-0.03491762,-0.024890369,0.04500413,-0.011945722,-0.010512475,0.032997865,-0.0007322394,-0.092883535,-0.013211769,-0.006508633,0.0855207,0.0008051657,-0.0046309475,-0.03822451,0.06487195,0.049584083,0.022991082,0.026752183,-0.05838457,-0.09081487,-0.03698052,-0.040241152,0.034790765,0.011768115,-0.08073041,0.046232484,-0.019247238,0.011725496,-0.025638018,-0.08284255,0.06183174,-0.06917483,-0.004754256,0.01730412,0.0060805725,0.06934726,0.025079789,0.05210587,-0.052408665,0.05973394,-0.046289288,0.01956836,-0.01568311,0.07369899,-0.03246156,0.008761008,-0.03599101,0.0281325,0.042968262,-0.034864396,-0.013595347,0.003638631,0.014452265,0.05671808,-0.0011961893,0.039401308,-0.044029213,-0.03576864,0.03870191,-0.0076855887,0.008002262,-0.007696878,0.015139228,-0.11479637,-0.047618978,-0.1308363,0.0033340647,0.024410315,0.075819686,-0.07504602,-0.010900552,0.0048147035,0.037513435,-0.038010992,-0.0024601088,0.027746739,0.049595032,-0.020252353,0.0017644329,0.010981579,0.041794386,0.004932131,-0.042414878,-0.057846487,-0.0012618895,0.047772616,0.066992596,-1.954726e-08,-0.064182244,0.031895168,0.03557131,0.08291499,-0.07150851,0.0028605245,0.006227369,0.017095957,0.03484121,-0.013597613,0.0927779,-0.045920726,-0.031139908,0.006245511,-0.046899635,0.016461084,0.034118455,0.0626974,0.037542596,0.05405933,0.012650653,0.0055504744,0.0069850073,-0.0011022248,-0.071919,0.05410474,0.049890045,-0.012916149,-0.03556444,-0.020004181,-0.0318706,0.009726396,-0.08416161,0.10418485,-0.096671104,-0.08448281,-0.033570148,0.08464976,-0.032882996,0.053002644,0.02064097,0.019348223,0.028387124,-0.030192249,0.028621184,0.07287867,-0.080233,0.03530834,-0.022818074,0.004413901,0.0027222692,-0.08478792,0.05718159,0.019955825,0.007177181,-0.02834581,-0.01693738,0.058297746,0.011376631,-0.032739192,0.015435723,-0.09342576,0.014976108,0.054440003]'::vector))\n                Sort Method: top-N heapsort  Memory: 25kB\n                Buffers: shared hit=3601 read=121\n                ->  Nested Loop  (cost=86.19..2591.33 rows=104 width=12) (actual time=14.202..187.240 rows=2880 loops=1)\n                      Buffers: shared hit=3601 read=121\n                      ->  Index Scan using guide_documents_owner on guide_documents d  (cost=0.28..97.12 rows=26 width=4) (actual time=6.174..8.077 rows=360 loops=1)\n                            Index Cond: (owner_id = (InitPlan 4).col1)\n                            Filter: (owner_id = (COALESCE(NULLIF(current_setting('request.jwt.claim.sub'::text, true), ''::text), ((NULLIF(current_setting('request.jwt.claims'::text, true), ''::text))::jsonb ->> 'sub'::text)))::uuid)\n                            Buffers: shared hit=59 read=2\n                      ->  Index Scan using guide_sections_docid on guide_sections s  (cost=85.91..95.88 rows=4 width=1552) (actual time=0.466..0.492 rows=8 loops=360)\n                            Index Cond: (document_id = d.id)\n                            Filter: (ANY (document_id = (hashed SubPlan 3).col1))\n                            Buffers: shared hit=3542 read=119\n                            SubPlan 3\n                              ->  Result  (cost=0.35..84.33 rows=514 width=4) (actual time=2.490..2.704 rows=360 loops=1)\n                                    One-Time Filter: ((InitPlan 2).col1 = (InitPlan 1).col1)\n                                    Buffers: shared hit=61\n                                    InitPlan 1\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.610..0.610 rows=1 loops=1)\n                                    InitPlan 2\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.586..0.587 rows=1 loops=1)\n                                    ->  Index Scan using guide_documents_owner on guide_documents  (cost=0.35..84.33 rows=514 width=4) (actual time=1.899..2.068 rows=360 loops=1)\n                                          Index Cond: (owner_id = (InitPlan 1).col1)\n                                          Buffers: shared hit=61\n  ->  CTE Scan on nearest  (cost=0.00..0.23 rows=10 width=20) (actual time=190.400..190.406 rows=10 loops=1)\n        Buffers: shared hit=3601 read=121\nPlanning:\n  Buffers: shared hit=5 read=8\nPlanning Time: 69.542 ms\nExecution Time: 208.416 ms",
+    "u_1pct": "Sort  (cost=578.08..578.10 rows=10 width=20) (actual time=76.039..76.044 rows=10 loops=1)\n  Sort Key: ((nearest.distance + '0'::double precision))\n  Sort Method: quicksort  Memory: 25kB\n  Buffers: shared hit=796 read=6\n  CTE nearest\n    ->  Limit  (cost=577.66..577.69 rows=10 width=12) (actual time=72.996..73.002 rows=10 loops=1)\n          Buffers: shared hit=796 read=6\n          InitPlan 4\n            ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.594..0.595 rows=1 loops=1)\n          ->  Sort  (cost=577.63..577.68 rows=20 width=12) (actual time=72.995..72.998 rows=10 loops=1)\n                Sort Key: ((s.embedding <=> '[0.054958034,-0.06229176,0.058387093,-0.04795135,0.05430149,0.02049663,0.07478535,-0.0409723,-0.1194586,-0.027420782,0.018627979,-0.03771741,-0.0028829852,0.0016788208,-0.0048630172,0.015843388,-0.010938108,-0.11203924,-0.0054362034,0.026607277,0.073716186,-0.042447597,-0.004297331,0.004534048,0.064883426,-0.051114693,0.054736476,0.050465286,0.037875056,-0.045829326,0.060525436,-0.10910286,-0.05248543,0.0022687146,-0.023183463,-0.023434976,0.09763841,-0.051571835,-0.102376185,-0.0623407,0.028195696,-0.08667582,-0.026955236,0.011321548,0.01415471,0.04109381,-0.008323441,-0.006529052,-0.060445342,0.063486405,0.10794336,0.00691775,0.028885052,0.035704114,0.047709007,-0.12169383,-0.0057937964,0.03717187,0.01063302,-0.085719295,0.016408041,-0.05465717,0.065403596,0.050098132,-0.005082441,0.0011220687,0.04278905,-0.05464061,-0.039623823,-0.06995231,-0.027992785,-0.09575008,-0.032313466,0.025356516,0.015387631,0.095590934,0.024778534,0.04051839,-0.03898606,-0.009485195,-0.02223496,0.112332165,-0.021043891,-0.1221985,-0.0526421,-0.041727837,0.011468573,0.016407598,-0.028213186,0.06435277,0.09238792,-0.061341867,-0.008341505,0.08421718,0.017876826,-0.0003603531,0.030333925,0.004045333,-0.093374096,-0.04632205,-0.014777925,0.13957796,-0.10229407,0.01924364,-0.048390444,0.06121497,0.02850841,0.06470873,0.022164887,-0.048639327,0.05255517,0.008310333,-0.13050579,0.023528395,-0.056252018,-0.0077300784,-0.070459984,-0.06626624,0.030244669,-0.100561336,0.045136124,0.10183384,-0.054050952,-0.029524256,-0.057948068,-0.063399315,-0.07552199,-3.1554136e-33,-0.033909407,0.028104346,-0.066450216,-0.07705907,0.020973867,0.038808964,0.016312975,0.028606392,-0.05660137,-0.049256995,-0.041251317,0.109654896,0.07408588,0.026072796,-0.0082638,-0.00773521,0.029702693,0.047386046,0.11379733,0.056248806,0.08848527,-0.026722193,0.036991954,-0.04204535,-0.028383324,-0.0092400955,-0.061815858,0.00446853,0.06824343,0.020975081,-0.029271292,-0.028596316,0.007830601,0.02321154,-0.03382836,0.03618408,-0.014183259,0.021872396,0.050768107,-0.06706773,-0.022698918,0.07276677,0.09488219,0.003633421,-0.06641784,-0.026181001,0.052714713,0.026178561,-0.067099646,-0.02275578,0.04279168,-0.06684077,0.03805957,-0.113398604,0.021457193,-0.01858327,0.010245457,0.012665366,0.00920101,-0.07768891,-0.054075785,0.06451953,-0.036241516,0.014791346,-0.11636673,-0.009656021,0.033800017,-0.046272215,-0.108299315,-0.052646693,0.008627103,0.02952727,0.038394894,-0.025697414,-0.044405986,0.003573785,-0.03929941,0.0064769713,0.047706157,0.044054836,-0.03884105,-0.0254668,-0.03437883,-0.0210365,0.03327994,-0.011896176,0.06368984,0.0874531,0.078335084,0.04442379,0.006836812,-0.026513001,-0.003436775,0.017989896,0.05872616,3.263541e-34,-0.013649027,0.0003431669,0.03969126,-0.024609266,0.03017127,0.03894422,0.13225394,0.071802646,-0.03491762,-0.024890369,0.04500413,-0.011945722,-0.010512475,0.032997865,-0.0007322394,-0.092883535,-0.013211769,-0.006508633,0.0855207,0.0008051657,-0.0046309475,-0.03822451,0.06487195,0.049584083,0.022991082,0.026752183,-0.05838457,-0.09081487,-0.03698052,-0.040241152,0.034790765,0.011768115,-0.08073041,0.046232484,-0.019247238,0.011725496,-0.025638018,-0.08284255,0.06183174,-0.06917483,-0.004754256,0.01730412,0.0060805725,0.06934726,0.025079789,0.05210587,-0.052408665,0.05973394,-0.046289288,0.01956836,-0.01568311,0.07369899,-0.03246156,0.008761008,-0.03599101,0.0281325,0.042968262,-0.034864396,-0.013595347,0.003638631,0.014452265,0.05671808,-0.0011961893,0.039401308,-0.044029213,-0.03576864,0.03870191,-0.0076855887,0.008002262,-0.007696878,0.015139228,-0.11479637,-0.047618978,-0.1308363,0.0033340647,0.024410315,0.075819686,-0.07504602,-0.010900552,0.0048147035,0.037513435,-0.038010992,-0.0024601088,0.027746739,0.049595032,-0.020252353,0.0017644329,0.010981579,0.041794386,0.004932131,-0.042414878,-0.057846487,-0.0012618895,0.047772616,0.066992596,-1.954726e-08,-0.064182244,0.031895168,0.03557131,0.08291499,-0.07150851,0.0028605245,0.006227369,0.017095957,0.03484121,-0.013597613,0.0927779,-0.045920726,-0.031139908,0.006245511,-0.046899635,0.016461084,0.034118455,0.0626974,0.037542596,0.05405933,0.012650653,0.0055504744,0.0069850073,-0.0011022248,-0.071919,0.05410474,0.049890045,-0.012916149,-0.03556444,-0.020004181,-0.0318706,0.009726396,-0.08416161,0.10418485,-0.096671104,-0.08448281,-0.033570148,0.08464976,-0.032882996,0.053002644,0.02064097,0.019348223,0.028387124,-0.030192249,0.028621184,0.07287867,-0.080233,0.03530834,-0.022818074,0.004413901,0.0027222692,-0.08478792,0.05718159,0.019955825,0.007177181,-0.02834581,-0.01693738,0.058297746,0.011376631,-0.032739192,0.015435723,-0.09342576,0.014976108,0.054440003]'::vector))\n                Sort Method: top-N heapsort  Memory: 25kB\n                Buffers: shared hit=796 read=6\n                ->  Nested Loop  (cost=86.19..577.20 rows=20 width=12) (actual time=12.773..71.090 rows=576 loops=1)\n                      Buffers: shared hit=796 read=6\n                      ->  Index Scan using guide_documents_owner on guide_documents d  (cost=0.28..97.12 rows=5 width=4) (actual time=5.516..5.910 rows=72 loops=1)\n                            Index Cond: (owner_id = (InitPlan 4).col1)\n                            Filter: (owner_id = (COALESCE(NULLIF(current_setting('request.jwt.claim.sub'::text, true), ''::text), ((NULLIF(current_setting('request.jwt.claims'::text, true), ''::text))::jsonb ->> 'sub'::text)))::uuid)\n                            Buffers: shared hit=41\n                      ->  Index Scan using guide_sections_docid on guide_sections s  (cost=85.91..95.97 rows=4 width=1552) (actual time=0.868..0.900 rows=8 loops=72)\n                            Index Cond: (document_id = d.id)\n                            Filter: (ANY (document_id = (hashed SubPlan 3).col1))\n                            Buffers: shared hit=755 read=6\n                            SubPlan 3\n                              ->  Result  (cost=0.35..84.33 rows=514 width=4) (actual time=1.252..1.321 rows=72 loops=1)\n                                    One-Time Filter: ((InitPlan 2).col1 = (InitPlan 1).col1)\n                                    Buffers: shared hit=41\n                                    InitPlan 1\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.017..0.017 rows=1 loops=1)\n                                    InitPlan 2\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.005..0.006 rows=1 loops=1)\n                                    ->  Index Scan using guide_documents_owner on guide_documents  (cost=0.35..84.33 rows=514 width=4) (actual time=1.244..1.302 rows=72 loops=1)\n                                          Index Cond: (owner_id = (InitPlan 1).col1)\n                                          Buffers: shared hit=41\n  ->  CTE Scan on nearest  (cost=0.00..0.23 rows=10 width=20) (actual time=73.001..73.006 rows=10 loops=1)\n        Buffers: shared hit=796 read=6\nPlanning:\n  Buffers: shared hit=13\nPlanning Time: 70.132 ms\nExecution Time: 86.817 ms",
+    "u_0_1pct": "Sort  (cost=193.34..193.35 rows=4 width=20) (actual time=17.965..17.969 rows=10 loops=1)\n  Sort Key: ((nearest.distance + '0'::double precision))\n  Sort Method: quicksort  Memory: 25kB\n  Buffers: shared hit=85 read=1\n  CTE nearest\n    ->  Limit  (cost=193.20..193.21 rows=4 width=12) (actual time=16.139..16.144 rows=10 loops=1)\n          Buffers: shared hit=85 read=1\n          InitPlan 4\n            ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.019..0.020 rows=1 loops=1)\n          ->  Sort  (cost=193.17..193.18 rows=4 width=12) (actual time=16.137..16.140 rows=10 loops=1)\n                Sort Key: ((s.embedding <=> '[0.054958034,-0.06229176,0.058387093,-0.04795135,0.05430149,0.02049663,0.07478535,-0.0409723,-0.1194586,-0.027420782,0.018627979,-0.03771741,-0.0028829852,0.0016788208,-0.0048630172,0.015843388,-0.010938108,-0.11203924,-0.0054362034,0.026607277,0.073716186,-0.042447597,-0.004297331,0.004534048,0.064883426,-0.051114693,0.054736476,0.050465286,0.037875056,-0.045829326,0.060525436,-0.10910286,-0.05248543,0.0022687146,-0.023183463,-0.023434976,0.09763841,-0.051571835,-0.102376185,-0.0623407,0.028195696,-0.08667582,-0.026955236,0.011321548,0.01415471,0.04109381,-0.008323441,-0.006529052,-0.060445342,0.063486405,0.10794336,0.00691775,0.028885052,0.035704114,0.047709007,-0.12169383,-0.0057937964,0.03717187,0.01063302,-0.085719295,0.016408041,-0.05465717,0.065403596,0.050098132,-0.005082441,0.0011220687,0.04278905,-0.05464061,-0.039623823,-0.06995231,-0.027992785,-0.09575008,-0.032313466,0.025356516,0.015387631,0.095590934,0.024778534,0.04051839,-0.03898606,-0.009485195,-0.02223496,0.112332165,-0.021043891,-0.1221985,-0.0526421,-0.041727837,0.011468573,0.016407598,-0.028213186,0.06435277,0.09238792,-0.061341867,-0.008341505,0.08421718,0.017876826,-0.0003603531,0.030333925,0.004045333,-0.093374096,-0.04632205,-0.014777925,0.13957796,-0.10229407,0.01924364,-0.048390444,0.06121497,0.02850841,0.06470873,0.022164887,-0.048639327,0.05255517,0.008310333,-0.13050579,0.023528395,-0.056252018,-0.0077300784,-0.070459984,-0.06626624,0.030244669,-0.100561336,0.045136124,0.10183384,-0.054050952,-0.029524256,-0.057948068,-0.063399315,-0.07552199,-3.1554136e-33,-0.033909407,0.028104346,-0.066450216,-0.07705907,0.020973867,0.038808964,0.016312975,0.028606392,-0.05660137,-0.049256995,-0.041251317,0.109654896,0.07408588,0.026072796,-0.0082638,-0.00773521,0.029702693,0.047386046,0.11379733,0.056248806,0.08848527,-0.026722193,0.036991954,-0.04204535,-0.028383324,-0.0092400955,-0.061815858,0.00446853,0.06824343,0.020975081,-0.029271292,-0.028596316,0.007830601,0.02321154,-0.03382836,0.03618408,-0.014183259,0.021872396,0.050768107,-0.06706773,-0.022698918,0.07276677,0.09488219,0.003633421,-0.06641784,-0.026181001,0.052714713,0.026178561,-0.067099646,-0.02275578,0.04279168,-0.06684077,0.03805957,-0.113398604,0.021457193,-0.01858327,0.010245457,0.012665366,0.00920101,-0.07768891,-0.054075785,0.06451953,-0.036241516,0.014791346,-0.11636673,-0.009656021,0.033800017,-0.046272215,-0.108299315,-0.052646693,0.008627103,0.02952727,0.038394894,-0.025697414,-0.044405986,0.003573785,-0.03929941,0.0064769713,0.047706157,0.044054836,-0.03884105,-0.0254668,-0.03437883,-0.0210365,0.03327994,-0.011896176,0.06368984,0.0874531,0.078335084,0.04442379,0.006836812,-0.026513001,-0.003436775,0.017989896,0.05872616,3.263541e-34,-0.013649027,0.0003431669,0.03969126,-0.024609266,0.03017127,0.03894422,0.13225394,0.071802646,-0.03491762,-0.024890369,0.04500413,-0.011945722,-0.010512475,0.032997865,-0.0007322394,-0.092883535,-0.013211769,-0.006508633,0.0855207,0.0008051657,-0.0046309475,-0.03822451,0.06487195,0.049584083,0.022991082,0.026752183,-0.05838457,-0.09081487,-0.03698052,-0.040241152,0.034790765,0.011768115,-0.08073041,0.046232484,-0.019247238,0.011725496,-0.025638018,-0.08284255,0.06183174,-0.06917483,-0.004754256,0.01730412,0.0060805725,0.06934726,0.025079789,0.05210587,-0.052408665,0.05973394,-0.046289288,0.01956836,-0.01568311,0.07369899,-0.03246156,0.008761008,-0.03599101,0.0281325,0.042968262,-0.034864396,-0.013595347,0.003638631,0.014452265,0.05671808,-0.0011961893,0.039401308,-0.044029213,-0.03576864,0.03870191,-0.0076855887,0.008002262,-0.007696878,0.015139228,-0.11479637,-0.047618978,-0.1308363,0.0033340647,0.024410315,0.075819686,-0.07504602,-0.010900552,0.0048147035,0.037513435,-0.038010992,-0.0024601088,0.027746739,0.049595032,-0.020252353,0.0017644329,0.010981579,0.041794386,0.004932131,-0.042414878,-0.057846487,-0.0012618895,0.047772616,0.066992596,-1.954726e-08,-0.064182244,0.031895168,0.03557131,0.08291499,-0.07150851,0.0028605245,0.006227369,0.017095957,0.03484121,-0.013597613,0.0927779,-0.045920726,-0.031139908,0.006245511,-0.046899635,0.016461084,0.034118455,0.0626974,0.037542596,0.05405933,0.012650653,0.0055504744,0.0069850073,-0.0011022248,-0.071919,0.05410474,0.049890045,-0.012916149,-0.03556444,-0.020004181,-0.0318706,0.009726396,-0.08416161,0.10418485,-0.096671104,-0.08448281,-0.033570148,0.08464976,-0.032882996,0.053002644,0.02064097,0.019348223,0.028387124,-0.030192249,0.028621184,0.07287867,-0.080233,0.03530834,-0.022818074,0.004413901,0.0027222692,-0.08478792,0.05718159,0.019955825,0.007177181,-0.02834581,-0.01693738,0.058297746,0.011376631,-0.032739192,0.015435723,-0.09342576,0.014976108,0.054440003]'::vector))\n                Sort Method: top-N heapsort  Memory: 25kB\n                Buffers: shared hit=85 read=1\n                ->  Nested Loop  (cost=86.19..193.13 rows=4 width=12) (actual time=6.813..14.421 rows=56 loops=1)\n                      Buffers: shared hit=85 read=1\n                      ->  Index Scan using guide_documents_owner on guide_documents d  (cost=0.28..97.12 rows=1 width=4) (actual time=0.747..0.786 rows=7 loops=1)\n                            Index Cond: (owner_id = (InitPlan 4).col1)\n                            Filter: (owner_id = (COALESCE(NULLIF(current_setting('request.jwt.claim.sub'::text, true), ''::text), ((NULLIF(current_setting('request.jwt.claims'::text, true), ''::text))::jsonb ->> 'sub'::text)))::uuid)\n                            Buffers: shared hit=8\n                      ->  Index Scan using guide_sections_docid on guide_sections s  (cost=85.91..95.97 rows=4 width=1552) (actual time=1.897..1.941 rows=8 loops=7)\n                            Index Cond: (document_id = d.id)\n                            Filter: (ANY (document_id = (hashed SubPlan 3).col1))\n                            Buffers: shared hit=77 read=1\n                            SubPlan 3\n                              ->  Result  (cost=0.35..84.33 rows=514 width=4) (actual time=1.265..1.296 rows=7 loops=1)\n                                    One-Time Filter: ((InitPlan 2).col1 = (InitPlan 1).col1)\n                                    Buffers: shared hit=8\n                                    InitPlan 1\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.013..0.013 rows=1 loops=1)\n                                    InitPlan 2\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.006..0.006 rows=1 loops=1)\n                                    ->  Index Scan using guide_documents_owner on guide_documents  (cost=0.35..84.33 rows=514 width=4) (actual time=1.257..1.284 rows=7 loops=1)\n                                          Index Cond: (owner_id = (InitPlan 1).col1)\n                                          Buffers: shared hit=8\n  ->  CTE Scan on nearest  (cost=0.00..0.09 rows=4 width=20) (actual time=16.144..16.149 rows=10 loops=1)\n        Buffers: shared hit=85 read=1\nPlanning:\n  Buffers: shared hit=13\nPlanning Time: 54.042 ms\nExecution Time: 30.796 ms",
+    "far_0_5pct": "Sort  (cost=385.83..385.85 rows=10 width=20) (actual time=47.211..47.216 rows=10 loops=1)\n  Sort Key: ((nearest.distance + '0'::double precision))\n  Sort Method: quicksort  Memory: 25kB\n  Buffers: shared hit=370\n  CTE nearest\n    ->  Limit  (cost=385.41..385.44 rows=10 width=12) (actual time=45.303..45.309 rows=10 loops=1)\n          Buffers: shared hit=370\n          InitPlan 4\n            ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.019..0.020 rows=1 loops=1)\n          ->  Sort  (cost=385.38..385.41 rows=12 width=12) (actual time=45.301..45.305 rows=10 loops=1)\n                Sort Key: ((s.embedding <=> '[0.054958034,-0.06229176,0.058387093,-0.04795135,0.05430149,0.02049663,0.07478535,-0.0409723,-0.1194586,-0.027420782,0.018627979,-0.03771741,-0.0028829852,0.0016788208,-0.0048630172,0.015843388,-0.010938108,-0.11203924,-0.0054362034,0.026607277,0.073716186,-0.042447597,-0.004297331,0.004534048,0.064883426,-0.051114693,0.054736476,0.050465286,0.037875056,-0.045829326,0.060525436,-0.10910286,-0.05248543,0.0022687146,-0.023183463,-0.023434976,0.09763841,-0.051571835,-0.102376185,-0.0623407,0.028195696,-0.08667582,-0.026955236,0.011321548,0.01415471,0.04109381,-0.008323441,-0.006529052,-0.060445342,0.063486405,0.10794336,0.00691775,0.028885052,0.035704114,0.047709007,-0.12169383,-0.0057937964,0.03717187,0.01063302,-0.085719295,0.016408041,-0.05465717,0.065403596,0.050098132,-0.005082441,0.0011220687,0.04278905,-0.05464061,-0.039623823,-0.06995231,-0.027992785,-0.09575008,-0.032313466,0.025356516,0.015387631,0.095590934,0.024778534,0.04051839,-0.03898606,-0.009485195,-0.02223496,0.112332165,-0.021043891,-0.1221985,-0.0526421,-0.041727837,0.011468573,0.016407598,-0.028213186,0.06435277,0.09238792,-0.061341867,-0.008341505,0.08421718,0.017876826,-0.0003603531,0.030333925,0.004045333,-0.093374096,-0.04632205,-0.014777925,0.13957796,-0.10229407,0.01924364,-0.048390444,0.06121497,0.02850841,0.06470873,0.022164887,-0.048639327,0.05255517,0.008310333,-0.13050579,0.023528395,-0.056252018,-0.0077300784,-0.070459984,-0.06626624,0.030244669,-0.100561336,0.045136124,0.10183384,-0.054050952,-0.029524256,-0.057948068,-0.063399315,-0.07552199,-3.1554136e-33,-0.033909407,0.028104346,-0.066450216,-0.07705907,0.020973867,0.038808964,0.016312975,0.028606392,-0.05660137,-0.049256995,-0.041251317,0.109654896,0.07408588,0.026072796,-0.0082638,-0.00773521,0.029702693,0.047386046,0.11379733,0.056248806,0.08848527,-0.026722193,0.036991954,-0.04204535,-0.028383324,-0.0092400955,-0.061815858,0.00446853,0.06824343,0.020975081,-0.029271292,-0.028596316,0.007830601,0.02321154,-0.03382836,0.03618408,-0.014183259,0.021872396,0.050768107,-0.06706773,-0.022698918,0.07276677,0.09488219,0.003633421,-0.06641784,-0.026181001,0.052714713,0.026178561,-0.067099646,-0.02275578,0.04279168,-0.06684077,0.03805957,-0.113398604,0.021457193,-0.01858327,0.010245457,0.012665366,0.00920101,-0.07768891,-0.054075785,0.06451953,-0.036241516,0.014791346,-0.11636673,-0.009656021,0.033800017,-0.046272215,-0.108299315,-0.052646693,0.008627103,0.02952727,0.038394894,-0.025697414,-0.044405986,0.003573785,-0.03929941,0.0064769713,0.047706157,0.044054836,-0.03884105,-0.0254668,-0.03437883,-0.0210365,0.03327994,-0.011896176,0.06368984,0.0874531,0.078335084,0.04442379,0.006836812,-0.026513001,-0.003436775,0.017989896,0.05872616,3.263541e-34,-0.013649027,0.0003431669,0.03969126,-0.024609266,0.03017127,0.03894422,0.13225394,0.071802646,-0.03491762,-0.024890369,0.04500413,-0.011945722,-0.010512475,0.032997865,-0.0007322394,-0.092883535,-0.013211769,-0.006508633,0.0855207,0.0008051657,-0.0046309475,-0.03822451,0.06487195,0.049584083,0.022991082,0.026752183,-0.05838457,-0.09081487,-0.03698052,-0.040241152,0.034790765,0.011768115,-0.08073041,0.046232484,-0.019247238,0.011725496,-0.025638018,-0.08284255,0.06183174,-0.06917483,-0.004754256,0.01730412,0.0060805725,0.06934726,0.025079789,0.05210587,-0.052408665,0.05973394,-0.046289288,0.01956836,-0.01568311,0.07369899,-0.03246156,0.008761008,-0.03599101,0.0281325,0.042968262,-0.034864396,-0.013595347,0.003638631,0.014452265,0.05671808,-0.0011961893,0.039401308,-0.044029213,-0.03576864,0.03870191,-0.0076855887,0.008002262,-0.007696878,0.015139228,-0.11479637,-0.047618978,-0.1308363,0.0033340647,0.024410315,0.075819686,-0.07504602,-0.010900552,0.0048147035,0.037513435,-0.038010992,-0.0024601088,0.027746739,0.049595032,-0.020252353,0.0017644329,0.010981579,0.041794386,0.004932131,-0.042414878,-0.057846487,-0.0012618895,0.047772616,0.066992596,-1.954726e-08,-0.064182244,0.031895168,0.03557131,0.08291499,-0.07150851,0.0028605245,0.006227369,0.017095957,0.03484121,-0.013597613,0.0927779,-0.045920726,-0.031139908,0.006245511,-0.046899635,0.016461084,0.034118455,0.0626974,0.037542596,0.05405933,0.012650653,0.0055504744,0.0069850073,-0.0011022248,-0.071919,0.05410474,0.049890045,-0.012916149,-0.03556444,-0.020004181,-0.0318706,0.009726396,-0.08416161,0.10418485,-0.096671104,-0.08448281,-0.033570148,0.08464976,-0.032882996,0.053002644,0.02064097,0.019348223,0.028387124,-0.030192249,0.028621184,0.07287867,-0.080233,0.03530834,-0.022818074,0.004413901,0.0027222692,-0.08478792,0.05718159,0.019955825,0.007177181,-0.02834581,-0.01693738,0.058297746,0.011376631,-0.032739192,0.015435723,-0.09342576,0.014976108,0.054440003]'::vector))\n                Sort Method: top-N heapsort  Memory: 25kB\n                Buffers: shared hit=370\n                ->  Nested Loop  (cost=86.19..385.16 rows=12 width=12) (actual time=10.151..42.693 rows=288 loops=1)\n                      Buffers: shared hit=370\n                      ->  Index Scan using guide_documents_owner on guide_documents d  (cost=0.28..97.12 rows=3 width=4) (actual time=4.339..4.580 rows=36 loops=1)\n                            Index Cond: (owner_id = (InitPlan 4).col1)\n                            Filter: (owner_id = (COALESCE(NULLIF(current_setting('request.jwt.claim.sub'::text, true), ''::text), ((NULLIF(current_setting('request.jwt.claims'::text, true), ''::text))::jsonb ->> 'sub'::text)))::uuid)\n                            Buffers: shared hit=5\n                      ->  Index Scan using guide_sections_docid on guide_sections s  (cost=85.91..95.97 rows=4 width=1552) (actual time=1.009..1.052 rows=8 loops=36)\n                            Index Cond: (document_id = d.id)\n                            Filter: (ANY (document_id = (hashed SubPlan 3).col1))\n                            Buffers: shared hit=365\n                            SubPlan 3\n                              ->  Result  (cost=0.35..84.33 rows=514 width=4) (actual time=2.165..2.196 rows=36 loops=1)\n                                    One-Time Filter: ((InitPlan 2).col1 = (InitPlan 1).col1)\n                                    Buffers: shared hit=5\n                                    InitPlan 1\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.012..0.013 rows=1 loops=1)\n                                    InitPlan 2\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.006..0.007 rows=1 loops=1)\n                                    ->  Index Scan using guide_documents_owner on guide_documents  (cost=0.35..84.33 rows=514 width=4) (actual time=2.156..2.180 rows=36 loops=1)\n                                          Index Cond: (owner_id = (InitPlan 1).col1)\n                                          Buffers: shared hit=5\n  ->  CTE Scan on nearest  (cost=0.00..0.23 rows=10 width=20) (actual time=45.308..45.313 rows=10 loops=1)\n        Buffers: shared hit=370\nPlanning:\n  Buffers: shared hit=13\nPlanning Time: 47.367 ms\nExecution Time: 59.795 ms",
+    "far_3pct": "Sort  (cost=1539.10..1539.13 rows=10 width=20) (actual time=127.453..127.458 rows=10 loops=1)\n  Sort Key: ((nearest.distance + '0'::double precision))\n  Sort Method: quicksort  Memory: 25kB\n  Buffers: shared hit=2162 read=6\n  CTE nearest\n    ->  Limit  (cost=1538.68..1538.71 rows=10 width=12) (actual time=126.195..126.202 rows=10 loops=1)\n          Buffers: shared hit=2162 read=6\n          InitPlan 4\n            ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.018..0.019 rows=1 loops=1)\n          ->  Sort  (cost=1538.65..1538.80 rows=60 width=12) (actual time=126.194..126.198 rows=10 loops=1)\n                Sort Key: ((s.embedding <=> '[0.054958034,-0.06229176,0.058387093,-0.04795135,0.05430149,0.02049663,0.07478535,-0.0409723,-0.1194586,-0.027420782,0.018627979,-0.03771741,-0.0028829852,0.0016788208,-0.0048630172,0.015843388,-0.010938108,-0.11203924,-0.0054362034,0.026607277,0.073716186,-0.042447597,-0.004297331,0.004534048,0.064883426,-0.051114693,0.054736476,0.050465286,0.037875056,-0.045829326,0.060525436,-0.10910286,-0.05248543,0.0022687146,-0.023183463,-0.023434976,0.09763841,-0.051571835,-0.102376185,-0.0623407,0.028195696,-0.08667582,-0.026955236,0.011321548,0.01415471,0.04109381,-0.008323441,-0.006529052,-0.060445342,0.063486405,0.10794336,0.00691775,0.028885052,0.035704114,0.047709007,-0.12169383,-0.0057937964,0.03717187,0.01063302,-0.085719295,0.016408041,-0.05465717,0.065403596,0.050098132,-0.005082441,0.0011220687,0.04278905,-0.05464061,-0.039623823,-0.06995231,-0.027992785,-0.09575008,-0.032313466,0.025356516,0.015387631,0.095590934,0.024778534,0.04051839,-0.03898606,-0.009485195,-0.02223496,0.112332165,-0.021043891,-0.1221985,-0.0526421,-0.041727837,0.011468573,0.016407598,-0.028213186,0.06435277,0.09238792,-0.061341867,-0.008341505,0.08421718,0.017876826,-0.0003603531,0.030333925,0.004045333,-0.093374096,-0.04632205,-0.014777925,0.13957796,-0.10229407,0.01924364,-0.048390444,0.06121497,0.02850841,0.06470873,0.022164887,-0.048639327,0.05255517,0.008310333,-0.13050579,0.023528395,-0.056252018,-0.0077300784,-0.070459984,-0.06626624,0.030244669,-0.100561336,0.045136124,0.10183384,-0.054050952,-0.029524256,-0.057948068,-0.063399315,-0.07552199,-3.1554136e-33,-0.033909407,0.028104346,-0.066450216,-0.07705907,0.020973867,0.038808964,0.016312975,0.028606392,-0.05660137,-0.049256995,-0.041251317,0.109654896,0.07408588,0.026072796,-0.0082638,-0.00773521,0.029702693,0.047386046,0.11379733,0.056248806,0.08848527,-0.026722193,0.036991954,-0.04204535,-0.028383324,-0.0092400955,-0.061815858,0.00446853,0.06824343,0.020975081,-0.029271292,-0.028596316,0.007830601,0.02321154,-0.03382836,0.03618408,-0.014183259,0.021872396,0.050768107,-0.06706773,-0.022698918,0.07276677,0.09488219,0.003633421,-0.06641784,-0.026181001,0.052714713,0.026178561,-0.067099646,-0.02275578,0.04279168,-0.06684077,0.03805957,-0.113398604,0.021457193,-0.01858327,0.010245457,0.012665366,0.00920101,-0.07768891,-0.054075785,0.06451953,-0.036241516,0.014791346,-0.11636673,-0.009656021,0.033800017,-0.046272215,-0.108299315,-0.052646693,0.008627103,0.02952727,0.038394894,-0.025697414,-0.044405986,0.003573785,-0.03929941,0.0064769713,0.047706157,0.044054836,-0.03884105,-0.0254668,-0.03437883,-0.0210365,0.03327994,-0.011896176,0.06368984,0.0874531,0.078335084,0.04442379,0.006836812,-0.026513001,-0.003436775,0.017989896,0.05872616,3.263541e-34,-0.013649027,0.0003431669,0.03969126,-0.024609266,0.03017127,0.03894422,0.13225394,0.071802646,-0.03491762,-0.024890369,0.04500413,-0.011945722,-0.010512475,0.032997865,-0.0007322394,-0.092883535,-0.013211769,-0.006508633,0.0855207,0.0008051657,-0.0046309475,-0.03822451,0.06487195,0.049584083,0.022991082,0.026752183,-0.05838457,-0.09081487,-0.03698052,-0.040241152,0.034790765,0.011768115,-0.08073041,0.046232484,-0.019247238,0.011725496,-0.025638018,-0.08284255,0.06183174,-0.06917483,-0.004754256,0.01730412,0.0060805725,0.06934726,0.025079789,0.05210587,-0.052408665,0.05973394,-0.046289288,0.01956836,-0.01568311,0.07369899,-0.03246156,0.008761008,-0.03599101,0.0281325,0.042968262,-0.034864396,-0.013595347,0.003638631,0.014452265,0.05671808,-0.0011961893,0.039401308,-0.044029213,-0.03576864,0.03870191,-0.0076855887,0.008002262,-0.007696878,0.015139228,-0.11479637,-0.047618978,-0.1308363,0.0033340647,0.024410315,0.075819686,-0.07504602,-0.010900552,0.0048147035,0.037513435,-0.038010992,-0.0024601088,0.027746739,0.049595032,-0.020252353,0.0017644329,0.010981579,0.041794386,0.004932131,-0.042414878,-0.057846487,-0.0012618895,0.047772616,0.066992596,-1.954726e-08,-0.064182244,0.031895168,0.03557131,0.08291499,-0.07150851,0.0028605245,0.006227369,0.017095957,0.03484121,-0.013597613,0.0927779,-0.045920726,-0.031139908,0.006245511,-0.046899635,0.016461084,0.034118455,0.0626974,0.037542596,0.05405933,0.012650653,0.0055504744,0.0069850073,-0.0011022248,-0.071919,0.05410474,0.049890045,-0.012916149,-0.03556444,-0.020004181,-0.0318706,0.009726396,-0.08416161,0.10418485,-0.096671104,-0.08448281,-0.033570148,0.08464976,-0.032882996,0.053002644,0.02064097,0.019348223,0.028387124,-0.030192249,0.028621184,0.07287867,-0.080233,0.03530834,-0.022818074,0.004413901,0.0027222692,-0.08478792,0.05718159,0.019955825,0.007177181,-0.02834581,-0.01693738,0.058297746,0.011376631,-0.032739192,0.015435723,-0.09342576,0.014976108,0.054440003]'::vector))\n                Sort Method: top-N heapsort  Memory: 25kB\n                Buffers: shared hit=2162 read=6\n                ->  Nested Loop  (cost=86.19..1537.36 rows=60 width=12) (actual time=11.707..124.517 rows=1728 loops=1)\n                      Buffers: shared hit=2162 read=6\n                      ->  Index Scan using guide_documents_owner on guide_documents d  (cost=0.28..97.12 rows=15 width=4) (actual time=4.930..5.706 rows=216 loops=1)\n                            Index Cond: (owner_id = (InitPlan 4).col1)\n                            Filter: (owner_id = (COALESCE(NULLIF(current_setting('request.jwt.claim.sub'::text, true), ''::text), ((NULLIF(current_setting('request.jwt.claims'::text, true), ''::text))::jsonb ->> 'sub'::text)))::uuid)\n                            Buffers: shared hit=4\n                      ->  Index Scan using guide_sections_docid on guide_sections s  (cost=85.91..95.97 rows=4 width=1552) (actual time=0.516..0.545 rows=8 loops=216)\n                            Index Cond: (document_id = d.id)\n                            Filter: (ANY (document_id = (hashed SubPlan 3).col1))\n                            Buffers: shared hit=2158 read=6\n                            SubPlan 3\n                              ->  Result  (cost=0.35..84.33 rows=514 width=4) (actual time=2.387..2.453 rows=216 loops=1)\n                                    One-Time Filter: ((InitPlan 2).col1 = (InitPlan 1).col1)\n                                    Buffers: shared hit=4\n                                    InitPlan 1\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.010..0.011 rows=1 loops=1)\n                                    InitPlan 2\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.635..0.636 rows=1 loops=1)\n                                    ->  Index Scan using guide_documents_owner on guide_documents  (cost=0.35..84.33 rows=514 width=4) (actual time=1.749..1.787 rows=216 loops=1)\n                                          Index Cond: (owner_id = (InitPlan 1).col1)\n                                          Buffers: shared hit=4\n  ->  CTE Scan on nearest  (cost=0.00..0.23 rows=10 width=20) (actual time=126.200..126.205 rows=10 loops=1)\n        Buffers: shared hit=2162 read=6\nPlanning:\n  Buffers: shared hit=13\nPlanning Time: 52.574 ms\nExecution Time: 137.186 ms",
+    "far_10pct": "Sort  (cost=2486.21..2486.23 rows=10 width=20) (actual time=2997.381..2997.387 rows=10 loops=1)\n  Sort Key: ((nearest.distance + '0'::double precision))\n  Sort Method: quicksort  Memory: 25kB\n  Buffers: shared hit=482 read=1751\n  CTE nearest\n    ->  Limit  (cost=267.20..2485.81 rows=10 width=12) (actual time=1494.988..2995.563 rows=10 loops=1)\n          Buffers: shared hit=482 read=1751\n          InitPlan 4\n            ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.021..0.022 rows=1 loops=1)\n          ->  Nested Loop  (cost=267.17..45526.90 rows=204 width=12) (actual time=1494.986..2995.556 rows=10 loops=1)\n                Buffers: shared hit=482 read=1751\n                ->  Index Scan using guide_sections_embedding on guide_sections s  (cost=266.87..42422.72 rows=28800 width=1552) (actual time=1488.117..2975.837 rows=10 loops=1)\n                      Order By: (embedding <=> '[0.054958034,-0.06229176,0.058387093,-0.04795135,0.05430149,0.02049663,0.07478535,-0.0409723,-0.1194586,-0.027420782,0.018627979,-0.03771741,-0.0028829852,0.0016788208,-0.0048630172,0.015843388,-0.010938108,-0.11203924,-0.0054362034,0.026607277,0.073716186,-0.042447597,-0.004297331,0.004534048,0.064883426,-0.051114693,0.054736476,0.050465286,0.037875056,-0.045829326,0.060525436,-0.10910286,-0.05248543,0.0022687146,-0.023183463,-0.023434976,0.09763841,-0.051571835,-0.102376185,-0.0623407,0.028195696,-0.08667582,-0.026955236,0.011321548,0.01415471,0.04109381,-0.008323441,-0.006529052,-0.060445342,0.063486405,0.10794336,0.00691775,0.028885052,0.035704114,0.047709007,-0.12169383,-0.0057937964,0.03717187,0.01063302,-0.085719295,0.016408041,-0.05465717,0.065403596,0.050098132,-0.005082441,0.0011220687,0.04278905,-0.05464061,-0.039623823,-0.06995231,-0.027992785,-0.09575008,-0.032313466,0.025356516,0.015387631,0.095590934,0.024778534,0.04051839,-0.03898606,-0.009485195,-0.02223496,0.112332165,-0.021043891,-0.1221985,-0.0526421,-0.041727837,0.011468573,0.016407598,-0.028213186,0.06435277,0.09238792,-0.061341867,-0.008341505,0.08421718,0.017876826,-0.0003603531,0.030333925,0.004045333,-0.093374096,-0.04632205,-0.014777925,0.13957796,-0.10229407,0.01924364,-0.048390444,0.06121497,0.02850841,0.06470873,0.022164887,-0.048639327,0.05255517,0.008310333,-0.13050579,0.023528395,-0.056252018,-0.0077300784,-0.070459984,-0.06626624,0.030244669,-0.100561336,0.045136124,0.10183384,-0.054050952,-0.029524256,-0.057948068,-0.063399315,-0.07552199,-3.1554136e-33,-0.033909407,0.028104346,-0.066450216,-0.07705907,0.020973867,0.038808964,0.016312975,0.028606392,-0.05660137,-0.049256995,-0.041251317,0.109654896,0.07408588,0.026072796,-0.0082638,-0.00773521,0.029702693,0.047386046,0.11379733,0.056248806,0.08848527,-0.026722193,0.036991954,-0.04204535,-0.028383324,-0.0092400955,-0.061815858,0.00446853,0.06824343,0.020975081,-0.029271292,-0.028596316,0.007830601,0.02321154,-0.03382836,0.03618408,-0.014183259,0.021872396,0.050768107,-0.06706773,-0.022698918,0.07276677,0.09488219,0.003633421,-0.06641784,-0.026181001,0.052714713,0.026178561,-0.067099646,-0.02275578,0.04279168,-0.06684077,0.03805957,-0.113398604,0.021457193,-0.01858327,0.010245457,0.012665366,0.00920101,-0.07768891,-0.054075785,0.06451953,-0.036241516,0.014791346,-0.11636673,-0.009656021,0.033800017,-0.046272215,-0.108299315,-0.052646693,0.008627103,0.02952727,0.038394894,-0.025697414,-0.044405986,0.003573785,-0.03929941,0.0064769713,0.047706157,0.044054836,-0.03884105,-0.0254668,-0.03437883,-0.0210365,0.03327994,-0.011896176,0.06368984,0.0874531,0.078335084,0.04442379,0.006836812,-0.026513001,-0.003436775,0.017989896,0.05872616,3.263541e-34,-0.013649027,0.0003431669,0.03969126,-0.024609266,0.03017127,0.03894422,0.13225394,0.071802646,-0.03491762,-0.024890369,0.04500413,-0.011945722,-0.010512475,0.032997865,-0.0007322394,-0.092883535,-0.013211769,-0.006508633,0.0855207,0.0008051657,-0.0046309475,-0.03822451,0.06487195,0.049584083,0.022991082,0.026752183,-0.05838457,-0.09081487,-0.03698052,-0.040241152,0.034790765,0.011768115,-0.08073041,0.046232484,-0.019247238,0.011725496,-0.025638018,-0.08284255,0.06183174,-0.06917483,-0.004754256,0.01730412,0.0060805725,0.06934726,0.025079789,0.05210587,-0.052408665,0.05973394,-0.046289288,0.01956836,-0.01568311,0.07369899,-0.03246156,0.008761008,-0.03599101,0.0281325,0.042968262,-0.034864396,-0.013595347,0.003638631,0.014452265,0.05671808,-0.0011961893,0.039401308,-0.044029213,-0.03576864,0.03870191,-0.0076855887,0.008002262,-0.007696878,0.015139228,-0.11479637,-0.047618978,-0.1308363,0.0033340647,0.024410315,0.075819686,-0.07504602,-0.010900552,0.0048147035,0.037513435,-0.038010992,-0.0024601088,0.027746739,0.049595032,-0.020252353,0.0017644329,0.010981579,0.041794386,0.004932131,-0.042414878,-0.057846487,-0.0012618895,0.047772616,0.066992596,-1.954726e-08,-0.064182244,0.031895168,0.03557131,0.08291499,-0.07150851,0.0028605245,0.006227369,0.017095957,0.03484121,-0.013597613,0.0927779,-0.045920726,-0.031139908,0.006245511,-0.046899635,0.016461084,0.034118455,0.0626974,0.037542596,0.05405933,0.012650653,0.0055504744,0.0069850073,-0.0011022248,-0.071919,0.05410474,0.049890045,-0.012916149,-0.03556444,-0.020004181,-0.0318706,0.009726396,-0.08416161,0.10418485,-0.096671104,-0.08448281,-0.033570148,0.08464976,-0.032882996,0.053002644,0.02064097,0.019348223,0.028387124,-0.030192249,0.028621184,0.07287867,-0.080233,0.03530834,-0.022818074,0.004413901,0.0027222692,-0.08478792,0.05718159,0.019955825,0.007177181,-0.02834581,-0.01693738,0.058297746,0.011376631,-0.032739192,0.015435723,-0.09342576,0.014976108,0.054440003]'::vector)\n                      Filter: (ANY (document_id = (hashed SubPlan 3).col1))\n                      Rows Removed by Filter: 87\n                      Buffers: shared hit=459 read=1744\n                      SubPlan 3\n                        ->  Result  (cost=0.35..84.33 rows=514 width=4) (actual time=3.140..3.352 rows=720 loops=1)\n                              One-Time Filter: ((InitPlan 2).col1 = (InitPlan 1).col1)\n                              Buffers: shared hit=7 read=1\n                              InitPlan 1\n                                ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.021..0.021 rows=1 loops=1)\n                              InitPlan 2\n                                ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.006..0.006 rows=1 loops=1)\n                              ->  Index Scan using guide_documents_owner on guide_documents  (cost=0.35..84.33 rows=514 width=4) (actual time=3.131..3.257 rows=720 loops=1)\n                                    Index Cond: (owner_id = (InitPlan 1).col1)\n                                    Buffers: shared hit=7 read=1\n                ->  Memoize  (cost=0.29..0.34 rows=1 width=4) (actual time=1.968..1.968 rows=1 loops=10)\n                      Cache Key: s.document_id\n                      Cache Mode: logical\n                      Hits: 0  Misses: 10  Evictions: 0  Overflows: 0  Memory Usage: 2kB\n                      Buffers: shared hit=23 read=7\n                      ->  Index Scan using guide_documents_pkey on guide_documents d  (cost=0.28..0.33 rows=1 width=4) (actual time=1.581..1.581 rows=1 loops=10)\n                            Index Cond: (id = s.document_id)\n                            Filter: ((owner_id = (InitPlan 4).col1) AND (owner_id = (COALESCE(NULLIF(current_setting('request.jwt.claim.sub'::text, true), ''::text), ((NULLIF(current_setting('request.jwt.claims'::text, true), ''::text))::jsonb ->> 'sub'::text)))::uuid))\n                            Buffers: shared hit=23 read=7\n  ->  CTE Scan on nearest  (cost=0.00..0.23 rows=10 width=20) (actual time=1494.992..2995.581 rows=10 loops=1)\n        Buffers: shared hit=482 read=1751\nPlanning:\n  Buffers: shared hit=13\nPlanning Time: 60.074 ms\nExecution Time: 3010.226 ms",
+    "sw_1_5pct": "Sort  (cost=866.38..866.41 rows=10 width=20) (actual time=132.729..132.734 rows=10 loops=1)\n  Sort Key: ((nearest.distance + '0'::double precision))\n  Sort Method: quicksort  Memory: 25kB\n  Buffers: shared hit=1009 read=79\n  CTE nearest\n    ->  Limit  (cost=865.97..865.99 rows=10 width=12) (actual time=130.890..130.896 rows=10 loops=1)\n          Buffers: shared hit=1009 read=79\n          InitPlan 4\n            ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.019..0.019 rows=1 loops=1)\n          ->  Sort  (cost=865.94..866.02 rows=32 width=12) (actual time=130.889..130.892 rows=10 loops=1)\n                Sort Key: ((s.embedding <=> '[0.054958034,-0.06229176,0.058387093,-0.04795135,0.05430149,0.02049663,0.07478535,-0.0409723,-0.1194586,-0.027420782,0.018627979,-0.03771741,-0.0028829852,0.0016788208,-0.0048630172,0.015843388,-0.010938108,-0.11203924,-0.0054362034,0.026607277,0.073716186,-0.042447597,-0.004297331,0.004534048,0.064883426,-0.051114693,0.054736476,0.050465286,0.037875056,-0.045829326,0.060525436,-0.10910286,-0.05248543,0.0022687146,-0.023183463,-0.023434976,0.09763841,-0.051571835,-0.102376185,-0.0623407,0.028195696,-0.08667582,-0.026955236,0.011321548,0.01415471,0.04109381,-0.008323441,-0.006529052,-0.060445342,0.063486405,0.10794336,0.00691775,0.028885052,0.035704114,0.047709007,-0.12169383,-0.0057937964,0.03717187,0.01063302,-0.085719295,0.016408041,-0.05465717,0.065403596,0.050098132,-0.005082441,0.0011220687,0.04278905,-0.05464061,-0.039623823,-0.06995231,-0.027992785,-0.09575008,-0.032313466,0.025356516,0.015387631,0.095590934,0.024778534,0.04051839,-0.03898606,-0.009485195,-0.02223496,0.112332165,-0.021043891,-0.1221985,-0.0526421,-0.041727837,0.011468573,0.016407598,-0.028213186,0.06435277,0.09238792,-0.061341867,-0.008341505,0.08421718,0.017876826,-0.0003603531,0.030333925,0.004045333,-0.093374096,-0.04632205,-0.014777925,0.13957796,-0.10229407,0.01924364,-0.048390444,0.06121497,0.02850841,0.06470873,0.022164887,-0.048639327,0.05255517,0.008310333,-0.13050579,0.023528395,-0.056252018,-0.0077300784,-0.070459984,-0.06626624,0.030244669,-0.100561336,0.045136124,0.10183384,-0.054050952,-0.029524256,-0.057948068,-0.063399315,-0.07552199,-3.1554136e-33,-0.033909407,0.028104346,-0.066450216,-0.07705907,0.020973867,0.038808964,0.016312975,0.028606392,-0.05660137,-0.049256995,-0.041251317,0.109654896,0.07408588,0.026072796,-0.0082638,-0.00773521,0.029702693,0.047386046,0.11379733,0.056248806,0.08848527,-0.026722193,0.036991954,-0.04204535,-0.028383324,-0.0092400955,-0.061815858,0.00446853,0.06824343,0.020975081,-0.029271292,-0.028596316,0.007830601,0.02321154,-0.03382836,0.03618408,-0.014183259,0.021872396,0.050768107,-0.06706773,-0.022698918,0.07276677,0.09488219,0.003633421,-0.06641784,-0.026181001,0.052714713,0.026178561,-0.067099646,-0.02275578,0.04279168,-0.06684077,0.03805957,-0.113398604,0.021457193,-0.01858327,0.010245457,0.012665366,0.00920101,-0.07768891,-0.054075785,0.06451953,-0.036241516,0.014791346,-0.11636673,-0.009656021,0.033800017,-0.046272215,-0.108299315,-0.052646693,0.008627103,0.02952727,0.038394894,-0.025697414,-0.044405986,0.003573785,-0.03929941,0.0064769713,0.047706157,0.044054836,-0.03884105,-0.0254668,-0.03437883,-0.0210365,0.03327994,-0.011896176,0.06368984,0.0874531,0.078335084,0.04442379,0.006836812,-0.026513001,-0.003436775,0.017989896,0.05872616,3.263541e-34,-0.013649027,0.0003431669,0.03969126,-0.024609266,0.03017127,0.03894422,0.13225394,0.071802646,-0.03491762,-0.024890369,0.04500413,-0.011945722,-0.010512475,0.032997865,-0.0007322394,-0.092883535,-0.013211769,-0.006508633,0.0855207,0.0008051657,-0.0046309475,-0.03822451,0.06487195,0.049584083,0.022991082,0.026752183,-0.05838457,-0.09081487,-0.03698052,-0.040241152,0.034790765,0.011768115,-0.08073041,0.046232484,-0.019247238,0.011725496,-0.025638018,-0.08284255,0.06183174,-0.06917483,-0.004754256,0.01730412,0.0060805725,0.06934726,0.025079789,0.05210587,-0.052408665,0.05973394,-0.046289288,0.01956836,-0.01568311,0.07369899,-0.03246156,0.008761008,-0.03599101,0.0281325,0.042968262,-0.034864396,-0.013595347,0.003638631,0.014452265,0.05671808,-0.0011961893,0.039401308,-0.044029213,-0.03576864,0.03870191,-0.0076855887,0.008002262,-0.007696878,0.015139228,-0.11479637,-0.047618978,-0.1308363,0.0033340647,0.024410315,0.075819686,-0.07504602,-0.010900552,0.0048147035,0.037513435,-0.038010992,-0.0024601088,0.027746739,0.049595032,-0.020252353,0.0017644329,0.010981579,0.041794386,0.004932131,-0.042414878,-0.057846487,-0.0012618895,0.047772616,0.066992596,-1.954726e-08,-0.064182244,0.031895168,0.03557131,0.08291499,-0.07150851,0.0028605245,0.006227369,0.017095957,0.03484121,-0.013597613,0.0927779,-0.045920726,-0.031139908,0.006245511,-0.046899635,0.016461084,0.034118455,0.0626974,0.037542596,0.05405933,0.012650653,0.0055504744,0.0069850073,-0.0011022248,-0.071919,0.05410474,0.049890045,-0.012916149,-0.03556444,-0.020004181,-0.0318706,0.009726396,-0.08416161,0.10418485,-0.096671104,-0.08448281,-0.033570148,0.08464976,-0.032882996,0.053002644,0.02064097,0.019348223,0.028387124,-0.030192249,0.028621184,0.07287867,-0.080233,0.03530834,-0.022818074,0.004413901,0.0027222692,-0.08478792,0.05718159,0.019955825,0.007177181,-0.02834581,-0.01693738,0.058297746,0.011376631,-0.032739192,0.015435723,-0.09342576,0.014976108,0.054440003]'::vector))\n                Sort Method: top-N heapsort  Memory: 25kB\n                Buffers: shared hit=1009 read=79\n                ->  Nested Loop  (cost=86.19..865.24 rows=32 width=12) (actual time=11.566..128.263 rows=864 loops=1)\n                      Buffers: shared hit=1009 read=79\n                      ->  Index Scan using guide_documents_owner on guide_documents d  (cost=0.28..97.12 rows=8 width=4) (actual time=5.500..6.165 rows=108 loops=1)\n                            Index Cond: (owner_id = (InitPlan 4).col1)\n                            Filter: (owner_id = (COALESCE(NULLIF(current_setting('request.jwt.claim.sub'::text, true), ''::text), ((NULLIF(current_setting('request.jwt.claims'::text, true), ''::text))::jsonb ->> 'sub'::text)))::uuid)\n                            Buffers: shared hit=2 read=2\n                      ->  Index Scan using guide_sections_docid on guide_sections s  (cost=85.91..95.97 rows=4 width=1552) (actual time=1.089..1.124 rows=8 loops=108)\n                            Index Cond: (document_id = d.id)\n                            Filter: (ANY (document_id = (hashed SubPlan 3).col1))\n                            Buffers: shared hit=1007 read=77\n                            SubPlan 3\n                              ->  Result  (cost=0.35..84.33 rows=514 width=4) (actual time=1.224..1.274 rows=108 loops=1)\n                                    One-Time Filter: ((InitPlan 2).col1 = (InitPlan 1).col1)\n                                    Buffers: shared hit=4\n                                    InitPlan 1\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.014..0.015 rows=1 loops=1)\n                                    InitPlan 2\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.005..0.006 rows=1 loops=1)\n                                    ->  Index Scan using guide_documents_owner on guide_documents  (cost=0.35..84.33 rows=514 width=4) (actual time=1.216..1.251 rows=108 loops=1)\n                                          Index Cond: (owner_id = (InitPlan 1).col1)\n                                          Buffers: shared hit=4\n  ->  CTE Scan on nearest  (cost=0.00..0.23 rows=10 width=20) (actual time=130.896..130.901 rows=10 loops=1)\n        Buffers: shared hit=1009 read=79\nPlanning:\n  Buffers: shared hit=5 read=8\nPlanning Time: 65.805 ms\nExecution Time: 144.148 ms",
+    "sw_2pct": "Sort  (cost=1058.59..1058.61 rows=10 width=20) (actual time=121.850..121.855 rows=10 loops=1)\n  Sort Key: ((nearest.distance + '0'::double precision))\n  Sort Method: quicksort  Memory: 25kB\n  Buffers: shared hit=1411 read=39\n  CTE nearest\n    ->  Limit  (cost=1058.17..1058.20 rows=10 width=12) (actual time=120.017..120.023 rows=10 loops=1)\n          Buffers: shared hit=1411 read=39\n          InitPlan 4\n            ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.649..0.650 rows=1 loops=1)\n          ->  Sort  (cost=1058.14..1058.24 rows=40 width=12) (actual time=120.015..120.019 rows=10 loops=1)\n                Sort Key: ((s.embedding <=> '[0.054958034,-0.06229176,0.058387093,-0.04795135,0.05430149,0.02049663,0.07478535,-0.0409723,-0.1194586,-0.027420782,0.018627979,-0.03771741,-0.0028829852,0.0016788208,-0.0048630172,0.015843388,-0.010938108,-0.11203924,-0.0054362034,0.026607277,0.073716186,-0.042447597,-0.004297331,0.004534048,0.064883426,-0.051114693,0.054736476,0.050465286,0.037875056,-0.045829326,0.060525436,-0.10910286,-0.05248543,0.0022687146,-0.023183463,-0.023434976,0.09763841,-0.051571835,-0.102376185,-0.0623407,0.028195696,-0.08667582,-0.026955236,0.011321548,0.01415471,0.04109381,-0.008323441,-0.006529052,-0.060445342,0.063486405,0.10794336,0.00691775,0.028885052,0.035704114,0.047709007,-0.12169383,-0.0057937964,0.03717187,0.01063302,-0.085719295,0.016408041,-0.05465717,0.065403596,0.050098132,-0.005082441,0.0011220687,0.04278905,-0.05464061,-0.039623823,-0.06995231,-0.027992785,-0.09575008,-0.032313466,0.025356516,0.015387631,0.095590934,0.024778534,0.04051839,-0.03898606,-0.009485195,-0.02223496,0.112332165,-0.021043891,-0.1221985,-0.0526421,-0.041727837,0.011468573,0.016407598,-0.028213186,0.06435277,0.09238792,-0.061341867,-0.008341505,0.08421718,0.017876826,-0.0003603531,0.030333925,0.004045333,-0.093374096,-0.04632205,-0.014777925,0.13957796,-0.10229407,0.01924364,-0.048390444,0.06121497,0.02850841,0.06470873,0.022164887,-0.048639327,0.05255517,0.008310333,-0.13050579,0.023528395,-0.056252018,-0.0077300784,-0.070459984,-0.06626624,0.030244669,-0.100561336,0.045136124,0.10183384,-0.054050952,-0.029524256,-0.057948068,-0.063399315,-0.07552199,-3.1554136e-33,-0.033909407,0.028104346,-0.066450216,-0.07705907,0.020973867,0.038808964,0.016312975,0.028606392,-0.05660137,-0.049256995,-0.041251317,0.109654896,0.07408588,0.026072796,-0.0082638,-0.00773521,0.029702693,0.047386046,0.11379733,0.056248806,0.08848527,-0.026722193,0.036991954,-0.04204535,-0.028383324,-0.0092400955,-0.061815858,0.00446853,0.06824343,0.020975081,-0.029271292,-0.028596316,0.007830601,0.02321154,-0.03382836,0.03618408,-0.014183259,0.021872396,0.050768107,-0.06706773,-0.022698918,0.07276677,0.09488219,0.003633421,-0.06641784,-0.026181001,0.052714713,0.026178561,-0.067099646,-0.02275578,0.04279168,-0.06684077,0.03805957,-0.113398604,0.021457193,-0.01858327,0.010245457,0.012665366,0.00920101,-0.07768891,-0.054075785,0.06451953,-0.036241516,0.014791346,-0.11636673,-0.009656021,0.033800017,-0.046272215,-0.108299315,-0.052646693,0.008627103,0.02952727,0.038394894,-0.025697414,-0.044405986,0.003573785,-0.03929941,0.0064769713,0.047706157,0.044054836,-0.03884105,-0.0254668,-0.03437883,-0.0210365,0.03327994,-0.011896176,0.06368984,0.0874531,0.078335084,0.04442379,0.006836812,-0.026513001,-0.003436775,0.017989896,0.05872616,3.263541e-34,-0.013649027,0.0003431669,0.03969126,-0.024609266,0.03017127,0.03894422,0.13225394,0.071802646,-0.03491762,-0.024890369,0.04500413,-0.011945722,-0.010512475,0.032997865,-0.0007322394,-0.092883535,-0.013211769,-0.006508633,0.0855207,0.0008051657,-0.0046309475,-0.03822451,0.06487195,0.049584083,0.022991082,0.026752183,-0.05838457,-0.09081487,-0.03698052,-0.040241152,0.034790765,0.011768115,-0.08073041,0.046232484,-0.019247238,0.011725496,-0.025638018,-0.08284255,0.06183174,-0.06917483,-0.004754256,0.01730412,0.0060805725,0.06934726,0.025079789,0.05210587,-0.052408665,0.05973394,-0.046289288,0.01956836,-0.01568311,0.07369899,-0.03246156,0.008761008,-0.03599101,0.0281325,0.042968262,-0.034864396,-0.013595347,0.003638631,0.014452265,0.05671808,-0.0011961893,0.039401308,-0.044029213,-0.03576864,0.03870191,-0.0076855887,0.008002262,-0.007696878,0.015139228,-0.11479637,-0.047618978,-0.1308363,0.0033340647,0.024410315,0.075819686,-0.07504602,-0.010900552,0.0048147035,0.037513435,-0.038010992,-0.0024601088,0.027746739,0.049595032,-0.020252353,0.0017644329,0.010981579,0.041794386,0.004932131,-0.042414878,-0.057846487,-0.0012618895,0.047772616,0.066992596,-1.954726e-08,-0.064182244,0.031895168,0.03557131,0.08291499,-0.07150851,0.0028605245,0.006227369,0.017095957,0.03484121,-0.013597613,0.0927779,-0.045920726,-0.031139908,0.006245511,-0.046899635,0.016461084,0.034118455,0.0626974,0.037542596,0.05405933,0.012650653,0.0055504744,0.0069850073,-0.0011022248,-0.071919,0.05410474,0.049890045,-0.012916149,-0.03556444,-0.020004181,-0.0318706,0.009726396,-0.08416161,0.10418485,-0.096671104,-0.08448281,-0.033570148,0.08464976,-0.032882996,0.053002644,0.02064097,0.019348223,0.028387124,-0.030192249,0.028621184,0.07287867,-0.080233,0.03530834,-0.022818074,0.004413901,0.0027222692,-0.08478792,0.05718159,0.019955825,0.007177181,-0.02834581,-0.01693738,0.058297746,0.011376631,-0.032739192,0.015435723,-0.09342576,0.014976108,0.054440003]'::vector))\n                Sort Method: top-N heapsort  Memory: 25kB\n                Buffers: shared hit=1411 read=39\n                ->  Nested Loop  (cost=86.19..1057.28 rows=40 width=12) (actual time=10.563..117.957 rows=1152 loops=1)\n                      Buffers: shared hit=1411 read=39\n                      ->  Index Scan using guide_documents_owner on guide_documents d  (cost=0.28..97.12 rows=10 width=4) (actual time=5.566..6.313 rows=144 loops=1)\n                            Index Cond: (owner_id = (InitPlan 4).col1)\n                            Filter: (owner_id = (COALESCE(NULLIF(current_setting('request.jwt.claim.sub'::text, true), ''::text), ((NULLIF(current_setting('request.jwt.claims'::text, true), ''::text))::jsonb ->> 'sub'::text)))::uuid)\n                            Buffers: shared hit=4 read=1\n                      ->  Index Scan using guide_sections_docid on guide_sections s  (cost=85.91..95.97 rows=4 width=1552) (actual time=0.737..0.770 rows=8 loops=144)\n                            Index Cond: (document_id = d.id)\n                            Filter: (ANY (document_id = (hashed SubPlan 3).col1))\n                            Buffers: shared hit=1407 read=38\n                            SubPlan 3\n                              ->  Result  (cost=0.35..84.33 rows=514 width=4) (actual time=1.251..1.298 rows=144 loops=1)\n                                    One-Time Filter: ((InitPlan 2).col1 = (InitPlan 1).col1)\n                                    Buffers: shared hit=5\n                                    InitPlan 1\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.013..0.014 rows=1 loops=1)\n                                    InitPlan 2\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.006..0.006 rows=1 loops=1)\n                                    ->  Index Scan using guide_documents_owner on guide_documents  (cost=0.35..84.33 rows=514 width=4) (actual time=1.243..1.270 rows=144 loops=1)\n                                          Index Cond: (owner_id = (InitPlan 1).col1)\n                                          Buffers: shared hit=5\n  ->  CTE Scan on nearest  (cost=0.00..0.23 rows=10 width=20) (actual time=120.022..120.027 rows=10 loops=1)\n        Buffers: shared hit=1411 read=39\nPlanning:\n  Buffers: shared hit=13\nPlanning Time: 60.117 ms\nExecution Time: 133.411 ms",
+    "sw_2_5pct": "Sort  (cost=1346.90..1346.92 rows=10 width=20) (actual time=132.783..132.789 rows=10 loops=1)\n  Sort Key: ((nearest.distance + '0'::double precision))\n  Sort Method: quicksort  Memory: 25kB\n  Buffers: shared hit=1793 read=15\n  CTE nearest\n    ->  Limit  (cost=1346.48..1346.50 rows=10 width=12) (actual time=131.516..131.523 rows=10 loops=1)\n          Buffers: shared hit=1793 read=15\n          InitPlan 4\n            ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.020..0.021 rows=1 loops=1)\n          ->  Sort  (cost=1346.45..1346.58 rows=52 width=12) (actual time=131.514..131.518 rows=10 loops=1)\n                Sort Key: ((s.embedding <=> '[0.054958034,-0.06229176,0.058387093,-0.04795135,0.05430149,0.02049663,0.07478535,-0.0409723,-0.1194586,-0.027420782,0.018627979,-0.03771741,-0.0028829852,0.0016788208,-0.0048630172,0.015843388,-0.010938108,-0.11203924,-0.0054362034,0.026607277,0.073716186,-0.042447597,-0.004297331,0.004534048,0.064883426,-0.051114693,0.054736476,0.050465286,0.037875056,-0.045829326,0.060525436,-0.10910286,-0.05248543,0.0022687146,-0.023183463,-0.023434976,0.09763841,-0.051571835,-0.102376185,-0.0623407,0.028195696,-0.08667582,-0.026955236,0.011321548,0.01415471,0.04109381,-0.008323441,-0.006529052,-0.060445342,0.063486405,0.10794336,0.00691775,0.028885052,0.035704114,0.047709007,-0.12169383,-0.0057937964,0.03717187,0.01063302,-0.085719295,0.016408041,-0.05465717,0.065403596,0.050098132,-0.005082441,0.0011220687,0.04278905,-0.05464061,-0.039623823,-0.06995231,-0.027992785,-0.09575008,-0.032313466,0.025356516,0.015387631,0.095590934,0.024778534,0.04051839,-0.03898606,-0.009485195,-0.02223496,0.112332165,-0.021043891,-0.1221985,-0.0526421,-0.041727837,0.011468573,0.016407598,-0.028213186,0.06435277,0.09238792,-0.061341867,-0.008341505,0.08421718,0.017876826,-0.0003603531,0.030333925,0.004045333,-0.093374096,-0.04632205,-0.014777925,0.13957796,-0.10229407,0.01924364,-0.048390444,0.06121497,0.02850841,0.06470873,0.022164887,-0.048639327,0.05255517,0.008310333,-0.13050579,0.023528395,-0.056252018,-0.0077300784,-0.070459984,-0.06626624,0.030244669,-0.100561336,0.045136124,0.10183384,-0.054050952,-0.029524256,-0.057948068,-0.063399315,-0.07552199,-3.1554136e-33,-0.033909407,0.028104346,-0.066450216,-0.07705907,0.020973867,0.038808964,0.016312975,0.028606392,-0.05660137,-0.049256995,-0.041251317,0.109654896,0.07408588,0.026072796,-0.0082638,-0.00773521,0.029702693,0.047386046,0.11379733,0.056248806,0.08848527,-0.026722193,0.036991954,-0.04204535,-0.028383324,-0.0092400955,-0.061815858,0.00446853,0.06824343,0.020975081,-0.029271292,-0.028596316,0.007830601,0.02321154,-0.03382836,0.03618408,-0.014183259,0.021872396,0.050768107,-0.06706773,-0.022698918,0.07276677,0.09488219,0.003633421,-0.06641784,-0.026181001,0.052714713,0.026178561,-0.067099646,-0.02275578,0.04279168,-0.06684077,0.03805957,-0.113398604,0.021457193,-0.01858327,0.010245457,0.012665366,0.00920101,-0.07768891,-0.054075785,0.06451953,-0.036241516,0.014791346,-0.11636673,-0.009656021,0.033800017,-0.046272215,-0.108299315,-0.052646693,0.008627103,0.02952727,0.038394894,-0.025697414,-0.044405986,0.003573785,-0.03929941,0.0064769713,0.047706157,0.044054836,-0.03884105,-0.0254668,-0.03437883,-0.0210365,0.03327994,-0.011896176,0.06368984,0.0874531,0.078335084,0.04442379,0.006836812,-0.026513001,-0.003436775,0.017989896,0.05872616,3.263541e-34,-0.013649027,0.0003431669,0.03969126,-0.024609266,0.03017127,0.03894422,0.13225394,0.071802646,-0.03491762,-0.024890369,0.04500413,-0.011945722,-0.010512475,0.032997865,-0.0007322394,-0.092883535,-0.013211769,-0.006508633,0.0855207,0.0008051657,-0.0046309475,-0.03822451,0.06487195,0.049584083,0.022991082,0.026752183,-0.05838457,-0.09081487,-0.03698052,-0.040241152,0.034790765,0.011768115,-0.08073041,0.046232484,-0.019247238,0.011725496,-0.025638018,-0.08284255,0.06183174,-0.06917483,-0.004754256,0.01730412,0.0060805725,0.06934726,0.025079789,0.05210587,-0.052408665,0.05973394,-0.046289288,0.01956836,-0.01568311,0.07369899,-0.03246156,0.008761008,-0.03599101,0.0281325,0.042968262,-0.034864396,-0.013595347,0.003638631,0.014452265,0.05671808,-0.0011961893,0.039401308,-0.044029213,-0.03576864,0.03870191,-0.0076855887,0.008002262,-0.007696878,0.015139228,-0.11479637,-0.047618978,-0.1308363,0.0033340647,0.024410315,0.075819686,-0.07504602,-0.010900552,0.0048147035,0.037513435,-0.038010992,-0.0024601088,0.027746739,0.049595032,-0.020252353,0.0017644329,0.010981579,0.041794386,0.004932131,-0.042414878,-0.057846487,-0.0012618895,0.047772616,0.066992596,-1.954726e-08,-0.064182244,0.031895168,0.03557131,0.08291499,-0.07150851,0.0028605245,0.006227369,0.017095957,0.03484121,-0.013597613,0.0927779,-0.045920726,-0.031139908,0.006245511,-0.046899635,0.016461084,0.034118455,0.0626974,0.037542596,0.05405933,0.012650653,0.0055504744,0.0069850073,-0.0011022248,-0.071919,0.05410474,0.049890045,-0.012916149,-0.03556444,-0.020004181,-0.0318706,0.009726396,-0.08416161,0.10418485,-0.096671104,-0.08448281,-0.033570148,0.08464976,-0.032882996,0.053002644,0.02064097,0.019348223,0.028387124,-0.030192249,0.028621184,0.07287867,-0.080233,0.03530834,-0.022818074,0.004413901,0.0027222692,-0.08478792,0.05718159,0.019955825,0.007177181,-0.02834581,-0.01693738,0.058297746,0.011376631,-0.032739192,0.015435723,-0.09342576,0.014976108,0.054440003]'::vector))\n                Sort Method: top-N heapsort  Memory: 25kB\n                Buffers: shared hit=1793 read=15\n                ->  Nested Loop  (cost=86.19..1345.32 rows=52 width=12) (actual time=14.758..128.722 rows=1440 loops=1)\n                      Buffers: shared hit=1793 read=15\n                      ->  Index Scan using guide_documents_owner on guide_documents d  (cost=0.28..97.12 rows=13 width=4) (actual time=6.404..7.532 rows=180 loops=1)\n                            Index Cond: (owner_id = (InitPlan 4).col1)\n                            Filter: (owner_id = (COALESCE(NULLIF(current_setting('request.jwt.claim.sub'::text, true), ''::text), ((NULLIF(current_setting('request.jwt.claims'::text, true), ''::text))::jsonb ->> 'sub'::text)))::uuid)\n                            Buffers: shared hit=4\n                      ->  Index Scan using guide_sections_docid on guide_sections s  (cost=85.91..95.97 rows=4 width=1552) (actual time=0.635..0.667 rows=8 loops=180)\n                            Index Cond: (document_id = d.id)\n                            Filter: (ANY (document_id = (hashed SubPlan 3).col1))\n                            Buffers: shared hit=1789 read=15\n                            SubPlan 3\n                              ->  Result  (cost=0.35..84.33 rows=514 width=4) (actual time=2.141..2.209 rows=180 loops=1)\n                                    One-Time Filter: ((InitPlan 2).col1 = (InitPlan 1).col1)\n                                    Buffers: shared hit=4\n                                    InitPlan 1\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.943..0.944 rows=1 loops=1)\n                                    InitPlan 2\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.914..0.914 rows=1 loops=1)\n                                    ->  Index Scan using guide_documents_owner on guide_documents  (cost=0.35..84.33 rows=514 width=4) (actual time=1.222..1.266 rows=180 loops=1)\n                                          Index Cond: (owner_id = (InitPlan 1).col1)\n                                          Buffers: shared hit=4\n  ->  CTE Scan on nearest  (cost=0.00..0.23 rows=10 width=20) (actual time=131.521..131.527 rows=10 loops=1)\n        Buffers: shared hit=1793 read=15\nPlanning:\n  Buffers: shared hit=13\nPlanning Time: 55.821 ms\nExecution Time: 143.543 ms",
+    "sw_3pct": "Sort  (cost=1539.10..1539.13 rows=10 width=20) (actual time=108.883..108.889 rows=10 loops=1)\n  Sort Key: ((nearest.distance + '0'::double precision))\n  Sort Method: quicksort  Memory: 25kB\n  Buffers: shared hit=2166 read=3\n  CTE nearest\n    ->  Limit  (cost=1538.68..1538.71 rows=10 width=12) (actual time=107.634..107.640 rows=10 loops=1)\n          Buffers: shared hit=2166 read=3\n          InitPlan 4\n            ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.020..0.021 rows=1 loops=1)\n          ->  Sort  (cost=1538.65..1538.80 rows=60 width=12) (actual time=107.632..107.636 rows=10 loops=1)\n                Sort Key: ((s.embedding <=> '[0.054958034,-0.06229176,0.058387093,-0.04795135,0.05430149,0.02049663,0.07478535,-0.0409723,-0.1194586,-0.027420782,0.018627979,-0.03771741,-0.0028829852,0.0016788208,-0.0048630172,0.015843388,-0.010938108,-0.11203924,-0.0054362034,0.026607277,0.073716186,-0.042447597,-0.004297331,0.004534048,0.064883426,-0.051114693,0.054736476,0.050465286,0.037875056,-0.045829326,0.060525436,-0.10910286,-0.05248543,0.0022687146,-0.023183463,-0.023434976,0.09763841,-0.051571835,-0.102376185,-0.0623407,0.028195696,-0.08667582,-0.026955236,0.011321548,0.01415471,0.04109381,-0.008323441,-0.006529052,-0.060445342,0.063486405,0.10794336,0.00691775,0.028885052,0.035704114,0.047709007,-0.12169383,-0.0057937964,0.03717187,0.01063302,-0.085719295,0.016408041,-0.05465717,0.065403596,0.050098132,-0.005082441,0.0011220687,0.04278905,-0.05464061,-0.039623823,-0.06995231,-0.027992785,-0.09575008,-0.032313466,0.025356516,0.015387631,0.095590934,0.024778534,0.04051839,-0.03898606,-0.009485195,-0.02223496,0.112332165,-0.021043891,-0.1221985,-0.0526421,-0.041727837,0.011468573,0.016407598,-0.028213186,0.06435277,0.09238792,-0.061341867,-0.008341505,0.08421718,0.017876826,-0.0003603531,0.030333925,0.004045333,-0.093374096,-0.04632205,-0.014777925,0.13957796,-0.10229407,0.01924364,-0.048390444,0.06121497,0.02850841,0.06470873,0.022164887,-0.048639327,0.05255517,0.008310333,-0.13050579,0.023528395,-0.056252018,-0.0077300784,-0.070459984,-0.06626624,0.030244669,-0.100561336,0.045136124,0.10183384,-0.054050952,-0.029524256,-0.057948068,-0.063399315,-0.07552199,-3.1554136e-33,-0.033909407,0.028104346,-0.066450216,-0.07705907,0.020973867,0.038808964,0.016312975,0.028606392,-0.05660137,-0.049256995,-0.041251317,0.109654896,0.07408588,0.026072796,-0.0082638,-0.00773521,0.029702693,0.047386046,0.11379733,0.056248806,0.08848527,-0.026722193,0.036991954,-0.04204535,-0.028383324,-0.0092400955,-0.061815858,0.00446853,0.06824343,0.020975081,-0.029271292,-0.028596316,0.007830601,0.02321154,-0.03382836,0.03618408,-0.014183259,0.021872396,0.050768107,-0.06706773,-0.022698918,0.07276677,0.09488219,0.003633421,-0.06641784,-0.026181001,0.052714713,0.026178561,-0.067099646,-0.02275578,0.04279168,-0.06684077,0.03805957,-0.113398604,0.021457193,-0.01858327,0.010245457,0.012665366,0.00920101,-0.07768891,-0.054075785,0.06451953,-0.036241516,0.014791346,-0.11636673,-0.009656021,0.033800017,-0.046272215,-0.108299315,-0.052646693,0.008627103,0.02952727,0.038394894,-0.025697414,-0.044405986,0.003573785,-0.03929941,0.0064769713,0.047706157,0.044054836,-0.03884105,-0.0254668,-0.03437883,-0.0210365,0.03327994,-0.011896176,0.06368984,0.0874531,0.078335084,0.04442379,0.006836812,-0.026513001,-0.003436775,0.017989896,0.05872616,3.263541e-34,-0.013649027,0.0003431669,0.03969126,-0.024609266,0.03017127,0.03894422,0.13225394,0.071802646,-0.03491762,-0.024890369,0.04500413,-0.011945722,-0.010512475,0.032997865,-0.0007322394,-0.092883535,-0.013211769,-0.006508633,0.0855207,0.0008051657,-0.0046309475,-0.03822451,0.06487195,0.049584083,0.022991082,0.026752183,-0.05838457,-0.09081487,-0.03698052,-0.040241152,0.034790765,0.011768115,-0.08073041,0.046232484,-0.019247238,0.011725496,-0.025638018,-0.08284255,0.06183174,-0.06917483,-0.004754256,0.01730412,0.0060805725,0.06934726,0.025079789,0.05210587,-0.052408665,0.05973394,-0.046289288,0.01956836,-0.01568311,0.07369899,-0.03246156,0.008761008,-0.03599101,0.0281325,0.042968262,-0.034864396,-0.013595347,0.003638631,0.014452265,0.05671808,-0.0011961893,0.039401308,-0.044029213,-0.03576864,0.03870191,-0.0076855887,0.008002262,-0.007696878,0.015139228,-0.11479637,-0.047618978,-0.1308363,0.0033340647,0.024410315,0.075819686,-0.07504602,-0.010900552,0.0048147035,0.037513435,-0.038010992,-0.0024601088,0.027746739,0.049595032,-0.020252353,0.0017644329,0.010981579,0.041794386,0.004932131,-0.042414878,-0.057846487,-0.0012618895,0.047772616,0.066992596,-1.954726e-08,-0.064182244,0.031895168,0.03557131,0.08291499,-0.07150851,0.0028605245,0.006227369,0.017095957,0.03484121,-0.013597613,0.0927779,-0.045920726,-0.031139908,0.006245511,-0.046899635,0.016461084,0.034118455,0.0626974,0.037542596,0.05405933,0.012650653,0.0055504744,0.0069850073,-0.0011022248,-0.071919,0.05410474,0.049890045,-0.012916149,-0.03556444,-0.020004181,-0.0318706,0.009726396,-0.08416161,0.10418485,-0.096671104,-0.08448281,-0.033570148,0.08464976,-0.032882996,0.053002644,0.02064097,0.019348223,0.028387124,-0.030192249,0.028621184,0.07287867,-0.080233,0.03530834,-0.022818074,0.004413901,0.0027222692,-0.08478792,0.05718159,0.019955825,0.007177181,-0.02834581,-0.01693738,0.058297746,0.011376631,-0.032739192,0.015435723,-0.09342576,0.014976108,0.054440003]'::vector))\n                Sort Method: top-N heapsort  Memory: 25kB\n                Buffers: shared hit=2166 read=3\n                ->  Nested Loop  (cost=86.19..1537.36 rows=60 width=12) (actual time=12.355..106.023 rows=1728 loops=1)\n                      Buffers: shared hit=2166 read=3\n                      ->  Index Scan using guide_documents_owner on guide_documents d  (cost=0.28..97.12 rows=15 width=4) (actual time=5.475..6.329 rows=216 loops=1)\n                            Index Cond: (owner_id = (InitPlan 4).col1)\n                            Filter: (owner_id = (COALESCE(NULLIF(current_setting('request.jwt.claim.sub'::text, true), ''::text), ((NULLIF(current_setting('request.jwt.claims'::text, true), ''::text))::jsonb ->> 'sub'::text)))::uuid)\n                            Buffers: shared hit=4 read=1\n                      ->  Index Scan using guide_sections_docid on guide_sections s  (cost=85.91..95.97 rows=4 width=1552) (actual time=0.429..0.457 rows=8 loops=216)\n                            Index Cond: (document_id = d.id)\n                            Filter: (ANY (document_id = (hashed SubPlan 3).col1))\n                            Buffers: shared hit=2162 read=2\n                            SubPlan 3\n                              ->  Result  (cost=0.35..84.33 rows=514 width=4) (actual time=2.443..2.521 rows=216 loops=1)\n                                    One-Time Filter: ((InitPlan 2).col1 = (InitPlan 1).col1)\n                                    Buffers: shared hit=5\n                                    InitPlan 1\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.017..0.017 rows=1 loops=1)\n                                    InitPlan 2\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.652..0.652 rows=1 loops=1)\n                                    ->  Index Scan using guide_documents_owner on guide_documents  (cost=0.35..84.33 rows=514 width=4) (actual time=1.788..1.838 rows=216 loops=1)\n                                          Index Cond: (owner_id = (InitPlan 1).col1)\n                                          Buffers: shared hit=5\n  ->  CTE Scan on nearest  (cost=0.00..0.23 rows=10 width=20) (actual time=107.639..107.644 rows=10 loops=1)\n        Buffers: shared hit=2166 read=3\nPlanning:\n  Buffers: shared hit=13\nPlanning Time: 48.526 ms\nExecution Time: 119.105 ms",
+    "sw_4pct": "Sort  (cost=2114.61..2114.64 rows=10 width=20) (actual time=114.012..114.018 rows=10 loops=1)\n  Sort Key: ((nearest.distance + '0'::double precision))\n  Sort Method: quicksort  Memory: 25kB\n  Buffers: shared hit=2890\n  CTE nearest\n    ->  Limit  (cost=2114.20..2114.22 rows=10 width=12) (actual time=112.123..112.129 rows=10 loops=1)\n          Buffers: shared hit=2890\n          InitPlan 4\n            ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.019..0.020 rows=1 loops=1)\n          ->  Sort  (cost=2114.17..2114.38 rows=84 width=12) (actual time=112.121..112.125 rows=10 loops=1)\n                Sort Key: ((s.embedding <=> '[0.054958034,-0.06229176,0.058387093,-0.04795135,0.05430149,0.02049663,0.07478535,-0.0409723,-0.1194586,-0.027420782,0.018627979,-0.03771741,-0.0028829852,0.0016788208,-0.0048630172,0.015843388,-0.010938108,-0.11203924,-0.0054362034,0.026607277,0.073716186,-0.042447597,-0.004297331,0.004534048,0.064883426,-0.051114693,0.054736476,0.050465286,0.037875056,-0.045829326,0.060525436,-0.10910286,-0.05248543,0.0022687146,-0.023183463,-0.023434976,0.09763841,-0.051571835,-0.102376185,-0.0623407,0.028195696,-0.08667582,-0.026955236,0.011321548,0.01415471,0.04109381,-0.008323441,-0.006529052,-0.060445342,0.063486405,0.10794336,0.00691775,0.028885052,0.035704114,0.047709007,-0.12169383,-0.0057937964,0.03717187,0.01063302,-0.085719295,0.016408041,-0.05465717,0.065403596,0.050098132,-0.005082441,0.0011220687,0.04278905,-0.05464061,-0.039623823,-0.06995231,-0.027992785,-0.09575008,-0.032313466,0.025356516,0.015387631,0.095590934,0.024778534,0.04051839,-0.03898606,-0.009485195,-0.02223496,0.112332165,-0.021043891,-0.1221985,-0.0526421,-0.041727837,0.011468573,0.016407598,-0.028213186,0.06435277,0.09238792,-0.061341867,-0.008341505,0.08421718,0.017876826,-0.0003603531,0.030333925,0.004045333,-0.093374096,-0.04632205,-0.014777925,0.13957796,-0.10229407,0.01924364,-0.048390444,0.06121497,0.02850841,0.06470873,0.022164887,-0.048639327,0.05255517,0.008310333,-0.13050579,0.023528395,-0.056252018,-0.0077300784,-0.070459984,-0.06626624,0.030244669,-0.100561336,0.045136124,0.10183384,-0.054050952,-0.029524256,-0.057948068,-0.063399315,-0.07552199,-3.1554136e-33,-0.033909407,0.028104346,-0.066450216,-0.07705907,0.020973867,0.038808964,0.016312975,0.028606392,-0.05660137,-0.049256995,-0.041251317,0.109654896,0.07408588,0.026072796,-0.0082638,-0.00773521,0.029702693,0.047386046,0.11379733,0.056248806,0.08848527,-0.026722193,0.036991954,-0.04204535,-0.028383324,-0.0092400955,-0.061815858,0.00446853,0.06824343,0.020975081,-0.029271292,-0.028596316,0.007830601,0.02321154,-0.03382836,0.03618408,-0.014183259,0.021872396,0.050768107,-0.06706773,-0.022698918,0.07276677,0.09488219,0.003633421,-0.06641784,-0.026181001,0.052714713,0.026178561,-0.067099646,-0.02275578,0.04279168,-0.06684077,0.03805957,-0.113398604,0.021457193,-0.01858327,0.010245457,0.012665366,0.00920101,-0.07768891,-0.054075785,0.06451953,-0.036241516,0.014791346,-0.11636673,-0.009656021,0.033800017,-0.046272215,-0.108299315,-0.052646693,0.008627103,0.02952727,0.038394894,-0.025697414,-0.044405986,0.003573785,-0.03929941,0.0064769713,0.047706157,0.044054836,-0.03884105,-0.0254668,-0.03437883,-0.0210365,0.03327994,-0.011896176,0.06368984,0.0874531,0.078335084,0.04442379,0.006836812,-0.026513001,-0.003436775,0.017989896,0.05872616,3.263541e-34,-0.013649027,0.0003431669,0.03969126,-0.024609266,0.03017127,0.03894422,0.13225394,0.071802646,-0.03491762,-0.024890369,0.04500413,-0.011945722,-0.010512475,0.032997865,-0.0007322394,-0.092883535,-0.013211769,-0.006508633,0.0855207,0.0008051657,-0.0046309475,-0.03822451,0.06487195,0.049584083,0.022991082,0.026752183,-0.05838457,-0.09081487,-0.03698052,-0.040241152,0.034790765,0.011768115,-0.08073041,0.046232484,-0.019247238,0.011725496,-0.025638018,-0.08284255,0.06183174,-0.06917483,-0.004754256,0.01730412,0.0060805725,0.06934726,0.025079789,0.05210587,-0.052408665,0.05973394,-0.046289288,0.01956836,-0.01568311,0.07369899,-0.03246156,0.008761008,-0.03599101,0.0281325,0.042968262,-0.034864396,-0.013595347,0.003638631,0.014452265,0.05671808,-0.0011961893,0.039401308,-0.044029213,-0.03576864,0.03870191,-0.0076855887,0.008002262,-0.007696878,0.015139228,-0.11479637,-0.047618978,-0.1308363,0.0033340647,0.024410315,0.075819686,-0.07504602,-0.010900552,0.0048147035,0.037513435,-0.038010992,-0.0024601088,0.027746739,0.049595032,-0.020252353,0.0017644329,0.010981579,0.041794386,0.004932131,-0.042414878,-0.057846487,-0.0012618895,0.047772616,0.066992596,-1.954726e-08,-0.064182244,0.031895168,0.03557131,0.08291499,-0.07150851,0.0028605245,0.006227369,0.017095957,0.03484121,-0.013597613,0.0927779,-0.045920726,-0.031139908,0.006245511,-0.046899635,0.016461084,0.034118455,0.0626974,0.037542596,0.05405933,0.012650653,0.0055504744,0.0069850073,-0.0011022248,-0.071919,0.05410474,0.049890045,-0.012916149,-0.03556444,-0.020004181,-0.0318706,0.009726396,-0.08416161,0.10418485,-0.096671104,-0.08448281,-0.033570148,0.08464976,-0.032882996,0.053002644,0.02064097,0.019348223,0.028387124,-0.030192249,0.028621184,0.07287867,-0.080233,0.03530834,-0.022818074,0.004413901,0.0027222692,-0.08478792,0.05718159,0.019955825,0.007177181,-0.02834581,-0.01693738,0.058297746,0.011376631,-0.032739192,0.015435723,-0.09342576,0.014976108,0.054440003]'::vector))\n                Sort Method: top-N heapsort  Memory: 25kB\n                Buffers: shared hit=2890\n                ->  Nested Loop  (cost=86.19..2112.35 rows=84 width=12) (actual time=11.392..109.037 rows=2304 loops=1)\n                      Buffers: shared hit=2890\n                      ->  Index Scan using guide_documents_owner on guide_documents d  (cost=0.28..97.12 rows=21 width=4) (actual time=3.798..4.898 rows=288 loops=1)\n                            Index Cond: (owner_id = (InitPlan 4).col1)\n                            Filter: (owner_id = (COALESCE(NULLIF(current_setting('request.jwt.claim.sub'::text, true), ''::text), ((NULLIF(current_setting('request.jwt.claims'::text, true), ''::text))::jsonb ->> 'sub'::text)))::uuid)\n                            Buffers: shared hit=5\n                      ->  Index Scan using guide_sections_docid on guide_sections s  (cost=85.91..95.91 rows=4 width=1552) (actual time=0.330..0.357 rows=8 loops=288)\n                            Index Cond: (document_id = d.id)\n                            Filter: (ANY (document_id = (hashed SubPlan 3).col1))\n                            Buffers: shared hit=2885\n                            SubPlan 3\n                              ->  Result  (cost=0.35..84.33 rows=514 width=4) (actual time=2.475..2.592 rows=288 loops=1)\n                                    One-Time Filter: ((InitPlan 2).col1 = (InitPlan 1).col1)\n                                    Buffers: shared hit=5\n                                    InitPlan 1\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.629..0.630 rows=1 loops=1)\n                                    InitPlan 2\n                                      ->  Result  (cost=0.00..0.03 rows=1 width=16) (actual time=0.639..0.639 rows=1 loops=1)\n                                    ->  Index Scan using guide_documents_owner on guide_documents  (cost=0.35..84.33 rows=514 width=4) (actual time=1.833..1.891 rows=288 loops=1)\n                                          Index Cond: (owner_id = (InitPlan 1).col1)\n                                          Buffers: shared hit=5\n  ->  CTE Scan on nearest  (cost=0.00..0.23 rows=10 width=20) (actual time=112.128..112.133 rows=10 loops=1)\n        Buffers: shared hit=2890\nPlanning:\n  Buffers: shared hit=13\nPlanning Time: 56.848 ms\nExecution Time: 126.690 ms"
+  },
+  "pooled_connection": {
+    "small_after_large": {
+      "mean_returned": 10,
+      "short_results": 0,
+      "recall_at_10": 1.0,
+      "out_of_order": 0,
+      "leaked_rows": 0,
+      "alerts": 0,
+      "missed_alerts": 0
+    },
+    "prepared_statement_plans": [
+      [
+        "u_50pct",
+        "hnsw"
+      ],
+      [
+        "u_50pct",
+        "hnsw"
+      ],
+      [
+        "u_50pct",
+        "hnsw"
+      ],
+      [
+        "u_50pct",
+        "hnsw"
+      ],
+      [
+        "u_50pct",
+        "hnsw"
+      ],
+      [
+        "u_50pct",
+        "hnsw"
+      ],
+      [
+        "u_50pct",
+        "hnsw"
+      ],
+      [
+        "u_50pct",
+        "hnsw"
+      ],
+      [
+        "u_0_1pct",
+        "btree"
+      ],
+      [
+        "u_0_1pct",
+        "btree"
+      ],
+      [
+        "u_0_1pct",
+        "btree"
+      ]
+    ]
+  },
+  "alert_control": {
+    "mean_returned": 0.44,
+    "short_results": 100,
+    "recall_at_10": 0.044000000000000004,
+    "out_of_order": 0,
+    "leaked_rows": 0,
+    "alerts": 100,
+    "missed_alerts": 0
+  },
+  "alert_sample": "search_shortfall user=2b777811-b824-58d6-b2d1-8fbdadb5655d returned=0 requested=10 owned_at_least=10",
+  "timing_method": {
+    "large_users": "20 searches each after one warm-up. Each query vector runs twice with EXPLAIN (ANALYZE, TIMING OFF) and twice plainly, timed by pg_stat_statements. The first run of a new vector is slow on this free-tier project however it is timed; explain_p50_ms is the repeat.",
+    "other_users": "EXPLAIN (ANALYZE, BUFFERS) with per-node timing, first run of each vector; their p50s are upper bounds"
+  },
+  "rpc_latency": {
+    "user": "u_10pct",
+    "searches": 20,
+    "warm_up": {
+      "qid": 0,
+      "first_ms": 3553.366100000858,
+      "returned": 10,
+      "repeat_ms": 307.14399999851594
+    },
+    "first_run_ms": {
+      "n": 20,
+      "p50": 483.503199999177,
+      "mean": 555.9949399998004,
+      "max": 1124.9704999972892
+    },
+    "repeat_ms": {
+      "n": 20,
+      "p50": 306.96954999802983,
+      "mean": 282.19907999973657,
+      "max": 409.5936999983678
+    },
+    "returned": [
+      10
+    ],
+    "rows": [
+      {
+        "qid": 0,
+        "first_ms": 3553.366100000858,
+        "returned": 10,
+        "repeat_ms": 307.14399999851594
+      },
+      {
+        "qid": 1,
+        "first_ms": 1124.702300003264,
+        "returned": 10,
+        "repeat_ms": 306.9322999981523
+      },
+      {
+        "qid": 2,
+        "first_ms": 649.9772000024677,
+        "returned": 10,
+        "repeat_ms": 266.0842000004777
+      },
+      {
+        "qid": 3,
+        "first_ms": 817.5335999985691,
+        "returned": 10,
+        "repeat_ms": 307.7023999976518
+      },
+      {
+        "qid": 4,
+        "first_ms": 1124.9704999972892,
+        "returned": 10,
+        "repeat_ms": 409.5936999983678
+      },
+      {
+        "qid": 5,
+        "first_ms": 715.6108999988646,
+        "returned": 10,
+        "repeat_ms": 306.7315000007511
+      },
+      {
+        "qid": 6,
+        "first_ms": 818.2780999995884,
+        "returned": 10,
+        "repeat_ms": 307.56169999949634
+      },
+      {
+        "qid": 7,
+        "first_ms": 510.59039999745437,
+        "returned": 10,
+        "repeat_ms": 306.7397999984678
+      },
+      {
+        "qid": 8,
+        "first_ms": 511.1767999987933,
+        "returned": 10,
+        "repeat_ms": 307.0970999979181
+      },
+      {
+        "qid": 9,
+        "first_ms": 407.994699999108,
+        "returned": 10,
+        "repeat_ms": 308.34580000009737
+      },
+      {
+        "qid": 10,
+        "first_ms": 612.3470999991696,
+        "returned": 10,
+        "repeat_ms": 307.29100000098697
+      },
+      {
+        "qid": 11,
+        "first_ms": 666.9230000006792,
+        "returned": 10,
+        "repeat_ms": 253.29390000115382
+      },
+      {
+        "qid": 12,
+        "first_ms": 354.4518999988213,
+        "returned": 10,
+        "repeat_ms": 210.22720000109985
+      },
+      {
+        "qid": 13,
+        "first_ms": 456.41600000089966,
+        "returned": 10,
+        "repeat_ms": 307.69299999883515
+      },
+      {
+        "qid": 14,
+        "first_ms": 408.0829000013182,
+        "returned": 10,
+        "repeat_ms": 307.00679999790736
+      },
+      {
+        "qid": 15,
+        "first_ms": 305.1789000019198,
+        "returned": 10,
+        "repeat_ms": 205.02459999988787
+      },
+      {
+        "qid": 16,
+        "first_ms": 408.41579999687383,
+        "returned": 10,
+        "repeat_ms": 307.1227000000363
+      },
+      {
+        "qid": 17,
+        "first_ms": 305.91500000082306,
+        "returned": 10,
+        "repeat_ms": 203.00690000294708
+      },
+      {
+        "qid": 18,
+        "first_ms": 309.00409999958356,
+        "returned": 10,
+        "repeat_ms": 307.1949000004679
+      },
+      {
+        "qid": 19,
+        "first_ms": 305.6082000002789,
+        "returned": 10,
+        "repeat_ms": 204.30530000157887
+      },
+      {
+        "qid": 20,
+        "first_ms": 306.7214000002423,
+        "returned": 10,
+        "repeat_ms": 205.02679999844986
+      }
+    ]
+  }
+}

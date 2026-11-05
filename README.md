@@ -75,6 +75,49 @@ END $$;
 
 [verify_guide_recipe.py](scripts/verify_guide_recipe.py) tests this function as `LANGUAGE sql`, PL/pgSQL, and PL/pgSQL with a dynamic query, for both versions of the schema, on 100 questions. All three returned 10 results in distance order for every user, with recall from 0.954 to 1.000 and no leaks.
 
+## Checking the function on the hosted project
+
+[check_search_function.py](scripts/check_search_function.py) runs the recipe above as `public.match_guide_sections` on the guide's schema and checks it the way you would before shipping. Results are in [function_checks_supabase.json](results/function_checks_supabase.json).
+
+- **It can't bypass RLS:** the function is `SECURITY INVOKER`. Its filter uses `auth.uid()` where the policy uses `(select auth.uid())`, so the planner can estimate the user's share, and for every test user it selects exactly the rows the policy allows. No search returned another user's row.
+- **Plans differ by user size, as intended:**
+
+  | User's share | Plan (20 of 20 searches) | Results | Recall@10 |
+  |---|---|---|---|
+  | 50%, 10% | HNSW, iterative scan | 10.00 | 0.962, 0.971 |
+  | 5%, 1%, 0.1% | `document_id` btree | 10.00 | 1.000 |
+  | 1.5% to 4%, near the switch point | `document_id` btree | 10.00 | 1.000 |
+  | 0.5%, 3%, 10%, documents least similar to the questions | btree, btree, HNSW | 10.00 | 1.000, 1.000, 0.965 |
+
+  On this project the planner switches between 5% and 10%. Locally it switched between 10% and 50%, so don't hard-code a threshold.
+- **A pooled connection doesn't carry one user's plan to the next:** after 20 searches by the 50% user, 100 searches by the 0.1% user on the same connection were all full and correct, and a prepared statement switched from HNSW to btree when the user changed.
+- **Shortfall alert:** the function logs a line when it returns fewer rows than requested to a user who owns at least that many sections. It never fired on the fixed function. On the original function, 100 of 100 short searches raised it.
+
+  ```sql
+  -- inside the plpgsql function, after RETURN QUERY ...
+  GET DIAGNOSTICS returned = ROW_COUNT;
+  IF returned < match_count THEN
+    SELECT count(*) INTO owned FROM (
+      SELECT 1 FROM public.document_sections s
+      WHERE s.document_id IN (SELECT d.id FROM public.documents d WHERE d.owner_id = auth.uid())
+      LIMIT match_count) o;
+    IF owned >= match_count THEN
+      RAISE LOG 'search_shortfall user=% returned=% requested=% owned_at_least=%',
+        auth.uid(), returned, match_count, owned;
+    END IF;
+  END IF;
+  ```
+
+  To find these in the dashboard, run this in Logs Explorer. I checked that the alert fires, not that the line appears there:
+
+  ```sql
+  select timestamp, event_message from postgres_logs
+  where event_message like '%search_shortfall%'
+  order by timestamp desc limit 100;
+  ```
+
+- **Latency on free Nano compute:** for the large users, a repeated search takes 2.7 to 2.9 ms (median, `EXPLAIN (ANALYZE, TIMING OFF)`, matched by `pg_stat_statements`). The first search with a new query vector takes 0.2 to 0.5 s however it is timed, likely because index pages have to come back into memory on this 0.5 GB instance. Through PostgREST from Pakistan, a call takes about 0.3 s for a repeat and 0.5 s for a first run, mostly network. `EXPLAIN ANALYZE` with per-node timing added up to a second on this instance, so it isn't used for timings.
+
 ## Also measured on a single table
 
 The first round used one table with an `owner` column and the policy `owner = (select auth.uid())`. Default results were nearly the same: 0.44 for the 1% user and 0.04 for the 0.1% user. An owner index, a query filter and iterative scan fixed every user size, but written as a `LANGUAGE sql` function the same query returned only 8.92 results at 0.664 recall for the 0.1% user. I haven't established why. Results are in [fixes_supabase.json](results/fixes_supabase.json) and [recipes_supabase.json](results/recipes_supabase.json).
@@ -128,7 +171,9 @@ python -m zipfile -e fiqa.zip data/
 
 `evaluate_guide_schema.py` copies embeddings from the single table that `evaluate_fixes.py` builds, so run that first.
 
-To use Supabase, copy `.env.example` to `.env`, add your Session pooler connection string, and pass `--backend supabase`. Use a project without real data, because these scripts create and replace tables and policies. Both tables together need about 430 MB, close to the free plan's 500 MB.
+To check the search function, run `.venv/Scripts/python scripts/check_search_function.py --backend supabase` after `evaluate_guide_schema.py`. It takes about 3 hours on the hosted project; `--timing-only` re-times the large users in about 15 minutes.
+
+To use Supabase, copy `.env.example` to `.env`, add your Session pooler connection string, and pass `--backend supabase`. The RPC timing also needs `SUPABASE_URL`, `SUPABASE_ANON_KEY` and the legacy `SUPABASE_JWT_SECRET`; it is skipped without them. Use a project without real data, because these scripts create and replace tables and policies. Both tables together need about 430 MB, close to the free plan's 500 MB.
 
 ### Checks
 
