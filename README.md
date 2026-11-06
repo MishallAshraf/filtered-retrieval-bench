@@ -6,7 +6,7 @@ Filtering on `document_id` in the search query, with two btree indexes and itera
 
 ![Average results returned per user, before and after the fix](results/results_by_user.png)
 
-This is an independent benchmark, not a Supabase project.
+This is an independent benchmark, not a Supabase project. A regression eval for the same failure, checking whether an AI agent can find and fix it, is proposed in [supabase/evals#488](https://github.com/supabase/evals/pull/488).
 
 ## Results
 
